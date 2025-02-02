@@ -10,15 +10,13 @@ import server.ClientHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class RegisterCommand implements Command {
-    private static final Logger logger = CustomLogger.getLogger(RegisterCommand.class.getName());
-    private static final String COMMAND_NAME = "register";
+public class LoginCommand implements Command {
+    private static final Logger logger = CustomLogger.getLogger(LoginCommand.class.getName());
+    private static final String COMMAND_NAME = "login";
     private static final int parametersAmount = 2;
-
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
         if (args.length != parametersAmount) {
-            logger.log(Level.INFO, "Sintaxis incorrecta de /{0} command", COMMAND_NAME);
             clientHandler.getOutput().println("Ayuda: " + CommandFactory.getCommandSymbol() +
                     COMMAND_NAME + " <username> <password>");
             return;
@@ -33,14 +31,15 @@ public class RegisterCommand implements Command {
 
         User user = manager.authenticate(username, password);
 
-        if (user == null && manager.registerUser(args[0], args[1])) {
-            logger.log(Level.INFO, "Ususario registrado con exito!");
+        if (user != null) {
+            logger.log(Level.INFO, "Ususario logueado con exito!");
+            clientHandler.setCurrentUser(user);
         } else {
-            logger.log(Level.WARNING, "El usuario ya existe!");
+            logger.log(Level.WARNING, "El usuario no existe!");
         }
     }
 
-    public static String getCommnadName() {
+    public static String getCommandName() {
         return COMMAND_NAME;
     }
 }

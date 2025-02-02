@@ -19,7 +19,7 @@ public class ProverbManager {
         proverbs = loadProverbs(filePath);
     }
 
-    public Map<Integer, String> loadProverbs(String filePath) {
+    private Map<Integer, String> loadProverbs(String filePath) {
         File proverbsFile = new File(filePath);
 
         if (!proverbsFile.exists()) {
@@ -93,7 +93,7 @@ public class ProverbManager {
         return proverbs;
     }
 
-    public static void main(String[] args) {
-        ProverbManager manager = new ProverbManager("proverbs.txt");
+    public void reloadProverbs(String filePath) {
+        proverbs = loadProverbs(filePath);
     }
 }

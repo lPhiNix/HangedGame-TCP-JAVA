@@ -34,9 +34,9 @@ public class RegisterCommand implements Command {
         User user = manager.authenticate(username, password);
 
         if (user == null && manager.registerUser(args[0], args[1])) {
-            logger.log(Level.INFO, "Ususario registrado con exito!");
+            clientHandler.sendMessageBoth(Level.INFO, "Ususario registrado con exito!");
         } else {
-            logger.log(Level.WARNING, "El usuario ya existe!");
+            clientHandler.sendMessageBoth(Level.WARNING, "El usuario ya existe");
         }
     }
 

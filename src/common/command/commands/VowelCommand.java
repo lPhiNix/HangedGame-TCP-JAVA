@@ -12,7 +12,7 @@ public class VowelCommand implements Command {
     private static final String COMMAND_NAME = "vowel";
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
-        logger.log(Level.INFO, "Start /{0} comand", COMMAND_NAME);
+        logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
     }
 
     public static String getCommandName() {

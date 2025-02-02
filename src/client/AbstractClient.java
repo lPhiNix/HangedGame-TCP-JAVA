@@ -1,5 +1,7 @@
 package client;
 
+import common.command.CommandFactory;
+import common.command.commands.ExitCommand;
 import common.model.User;
 
 import java.io.*;
@@ -36,7 +38,7 @@ public class AbstractClient {
                 while (true) {
                     try {
                         System.out.println(inputReader.readLine());
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
                 }
@@ -45,9 +47,10 @@ public class AbstractClient {
             inputThread.start();
 
             // Comando del cliente
-            while (true) {
+            String commandLine = "";
+            while (!commandLine.equals(CommandFactory.getCommandSymbol() + ExitCommand.getCommandName())) {
                 System.out.print("> ");
-                String commandLine = scanner.nextLine().trim();
+                commandLine = scanner.nextLine().trim();
                 outputWriter.println(commandLine);
             }
 

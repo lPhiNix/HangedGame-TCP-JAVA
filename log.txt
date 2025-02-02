@@ -117,3 +117,82 @@
 [02/02/2025 20:35:55] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
 [02/02/2025 20:35:55] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
 [02/02/2025 20:36:01] <server.ClientHandler> [INFO]: Comando recibido: /register jdcw
+[02/02/2025 20:36:52] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 20:36:56] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 20:36:56] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 20:37:01] <server.ClientHandler> [INFO]: Comando recibido: /register ewndew
+[02/02/2025 20:37:01] <common.command.commands.RegisterCommand> [INFO]: Sintaxis incorrecta de /register command
+[02/02/2025 20:37:46] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Connection reset
+[02/02/2025 20:37:47] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 20:37:47] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 20:37:59] <server.ClientHandler> [INFO]: Comando recibido: /register wkw
+[02/02/2025 20:37:59] <common.command.commands.RegisterCommand> [INFO]: Sintaxis incorrecta de /register command
+[02/02/2025 20:39:17] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Connection reset
+[02/02/2025 20:39:18] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 20:39:18] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:02:44] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:02:46] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:02:46] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:02:50] <server.ClientHandler> [INFO]: Comando recibido: /user
+[02/02/2025 21:03:08] <server.ClientHandler> [INFO]: Comando recibido: /register JuanAlverto69 6969
+[02/02/2025 21:03:08] <common.command.commands.RegisterCommand> [INFO]: Ejecutando /register command
+[02/02/2025 21:03:08] <common.command.commands.RegisterCommand> [INFO]: Ususario registrado con exito!
+[02/02/2025 21:03:14] <server.ClientHandler> [INFO]: Comando recibido: /user
+[02/02/2025 21:03:23] <server.ClientHandler> [INFO]: Comando recibido: /login JuanAlverto69 6969
+[02/02/2025 21:03:23] <common.command.commands.LoginCommand> [INFO]: Ejecutando /login command
+[02/02/2025 21:03:23] <common.command.commands.LoginCommand> [INFO]: Ususario logueado con exito!
+[02/02/2025 21:03:25] <server.ClientHandler> [INFO]: Comando recibido: /user
+[02/02/2025 21:03:25] <common.command.commands.UserCommand> [INFO]: Ejecutando /user command
+[02/02/2025 21:13:45] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Connection reset
+[02/02/2025 21:13:45] <server.ClientHandler> [INFO]: Conexión cerrada para el usuario: JuanAlverto69
+[02/02/2025 21:13:46] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:13:46] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:13:52] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:13:57] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:13:57] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:14:01] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:14:01] <common.command.commands.ExitCommand> [INFO]: Start /exit comand
+[02/02/2025 21:15:25] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:15:29] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:15:29] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:15:31] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:15:31] <common.command.commands.ExitCommand> [INFO]: Start /exit comand
+[02/02/2025 21:16:55] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:16:58] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:16:58] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:17:00] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:17:00] <common.command.commands.ExitCommand> [INFO]: Start /exit comand
+[02/02/2025 21:17:00] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Cannot invoke "common.model.User.getUsername()" because "this.currentUser" is null
+[02/02/2025 21:24:09] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:24:13] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:24:13] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:24:16] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:24:16] <common.command.commands.ExitCommand> [INFO]: Start /exit command
+[02/02/2025 21:24:16] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Socket closed
+[02/02/2025 21:24:47] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:24:47] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:24:49] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:24:49] <common.command.commands.ExitCommand> [INFO]: Start /exit command
+[02/02/2025 21:24:49] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Socket closed
+[02/02/2025 21:25:36] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:25:38] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:25:38] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:25:43] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:25:43] <common.command.commands.ExitCommand> [INFO]: Start /exit command
+[02/02/2025 21:25:43] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Socket closed
+[02/02/2025 21:27:31] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:27:37] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:27:37] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:27:39] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:27:39] <common.command.commands.ExitCommand> [INFO]: Start /exit command
+[02/02/2025 21:27:39] <server.ClientHandler> [SEVERE]: Error de conexión con cliente: Socket closed
+[02/02/2025 21:28:15] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:28:21] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:28:21] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:28:24] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:28:24] <common.command.commands.ExitCommand> [INFO]: Start /exit command
+[02/02/2025 21:31:19] <server.AbstractServer> [INFO]: Servidor escuchando en el puerto: 2050
+[02/02/2025 21:31:23] <server.AbstractServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[02/02/2025 21:31:23] <server.ClientHandler> [INFO]: Esperando que el cliente ingrese un comando
+[02/02/2025 21:31:25] <server.ClientHandler> [INFO]: Comando recibido: /exit
+[02/02/2025 21:31:25] <common.command.commands.ExitCommand> [INFO]: Start /exit command

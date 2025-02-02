@@ -25,6 +25,7 @@ public class ClientHandler extends Thread {
     private BufferedReader input;
     private PrintWriter output;
     private User currentUser;
+    private boolean isRunning = true;
 
     public ClientHandler(Socket socket, UserManager userManager, ProverbManager proverbManager) {
         this.socket = socket;
@@ -43,6 +44,7 @@ public class ClientHandler extends Thread {
 
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error de conexión con cliente: " + e.getMessage());
+            e.printStackTrace();
         } finally {
             closeConnection();
         }
@@ -52,7 +54,8 @@ public class ClientHandler extends Thread {
         logger.log(Level.INFO, "Esperando que el cliente ingrese un comando");
 
         String commandLine;
-        while ((commandLine = input.readLine()) != null) {
+        while (isRunning) {
+            commandLine = input.readLine();
             processCommand(commandLine);
         }
     }
@@ -99,23 +102,29 @@ public class ClientHandler extends Thread {
         return Arrays.copyOfRange(array, 1, array.length);
     }
 
-    private void closeConnection() {
+    public void closeConnection() {
         try {
             if (socket != null && !socket.isClosed()) {
                 socket.close();
-                logger.info("Conexión cerrada para el usuario: " + currentUser.getUsername());
+
+                if (currentUser != null) {
+                    logger.info("Conexión cerrada para el usuario: " + currentUser.getUsername());
+                }
             }
         } catch (IOException e) {
             logger.severe("Error al cerrar conexión: " + e.getMessage());
+        } finally {
+            this.interrupt();
         }
+    }
+
+    public void sendMessageBoth(Level level, String message) {
+        logger.log(level, message);
+        output.println(message);
     }
 
     public UserManager getUserManager() {
         return userManager;
-    }
-
-    public ProverbManager getProverbManager() {
-        return proverbManager;
     }
 
     public PrintWriter getOutput() {
@@ -128,5 +137,9 @@ public class ClientHandler extends Thread {
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public void setRunning(boolean running) {
+        this.isRunning = running;
     }
 }

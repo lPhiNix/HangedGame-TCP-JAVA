@@ -32,10 +32,10 @@ public class LoginCommand implements Command {
         User user = manager.authenticate(username, password);
 
         if (user != null) {
-            logger.log(Level.INFO, "Ususario logueado con exito!");
             clientHandler.setCurrentUser(user);
+            clientHandler.sendMessageBoth(Level.INFO, "Ususario logueado con exito!");
         } else {
-            logger.log(Level.WARNING, "El usuario no existe!");
+            clientHandler.sendMessageBoth(Level.WARNING, "El usuario no existe!");
         }
     }
 

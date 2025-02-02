@@ -12,7 +12,7 @@ public class ConsonantCommand implements Command {
     private static final String COMMAND_NAME = "consonant";
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
-        logger.log(Level.INFO, "Start /{0} comand", COMMAND_NAME);
+        logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
     }
 
     public static String getCommandName() {

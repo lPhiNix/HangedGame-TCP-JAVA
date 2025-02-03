@@ -13,6 +13,19 @@ public class ConsonantCommand implements Command {
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
         logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
+
+        if (!clientHandler.hasActiveGame()) {
+            clientHandler.getOutput().println("No tienes una partida activa.");
+            return;
+        }
+
+        if (args.length != 1 || args[0].length() != 1) {
+            clientHandler.getOutput().println("Uso: /consonant <letra>");
+            return;
+        }
+
+        char consonant = args[0].charAt(0);
+        clientHandler.getGameSession().guessConsonant(consonant);
     }
 
     public static String getCommandName() {

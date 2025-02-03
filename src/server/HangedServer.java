@@ -10,15 +10,15 @@ import java.util.concurrent.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class AbstractServer implements Server {
-    private static final Logger logger = CustomLogger.getLogger(AbstractServer.class.getName());
+public class HangedServer implements Server {
+    private static final Logger logger = CustomLogger.getLogger(HangedServer.class.getName());
     private final int port;
     private final int maxUsers;
     private final ExecutorService threadPool;
     private final UserManager userManager;
     private final ProverbManager proverbManager;
 
-    public AbstractServer(int port, int maxUsers, String proverbsFileName) {
+    public HangedServer(int port, int maxUsers, String proverbsFileName) {
         this.port = port;
         this.maxUsers = maxUsers;
 

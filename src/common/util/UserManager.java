@@ -39,12 +39,16 @@ public class UserManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 3) {
+                if (parts.length == 5) {
                     String username = parts[0];
                     String password = parts[1];
                     int score = Integer.parseInt(parts[2]);
+                    int wins = Integer.parseInt(parts[3]);
+                    int defeats = Integer.parseInt(parts[4]);
                     User user = new User(username, password);
                     user.addScore(score);
+                    user.win(wins);
+                    user.defeat(defeats);
                     users.put(username, user);
                 }
             }
@@ -56,7 +60,11 @@ public class UserManager {
     private void saveUsersToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (User user : users.values()) {
-                writer.write(user.getUsername() + "," + user.getPassword() + "," + user.getScore());
+                writer.write(user.getUsername() + ","
+                        + user.getPassword() + ","
+                        + user.getScore() + ","
+                        + user.getWins() + ","
+                        + user.getDefeats());
                 writer.newLine();
             }
         } catch (IOException e) {

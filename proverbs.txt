@@ -1,96 +1,48 @@
-A buen entendedor, pocas palabras bastan.
-A falta de pan, buenas son tortas.
-A quien madruga, Dios le ayuda.
-Agua que no has de beber, dejala correr.
-Al que no quiere caldo, se le dan dos tazas.
-Ande yo caliente y riase la gente.
-Arbol que nace torcido, jamas su tronco endereza.
-Barriga llena, corazon contento.
-Camaron que se duerme, se lo lleva la corriente.
-Cria cuervos y te sacaran los ojos.
-Cuando el rio suena, agua lleva.
-Dime con quien andas y te dire quien eres.
-Donde hay patron, no manda marinero.
-El habito no hace al monje.
-El que mucho abarca, poco aprieta.
-En casa del herrero, cuchillo de palo.
-En boca cerrada no entran moscas.
-Gato escaldado, del agua fria huye.
-Hablando del rey de Roma, por la puerta asoma.
-La cabra siempre tira al monte.
-La curiosidad mato al gato.
-La excepcion confirma la regla.
-La gallina de los huevos de oro.
-La necesidad es la madre de la invencion.
-La paciencia es la madre de la ciencia.
-La suerte de la fea, la bonita la desea.
-Ladron que roba a ladron tiene cien años de perdon.
-Lo cortes no quita lo valiente.
-Lo prometido es deuda.
-Mal de muchos, consuelo de tontos.
-Mas sabe el diablo por viejo que por diablo.
-Mas vale maña que fuerza.
-Mas vale pajaro en mano que ciento volando.
-Mucho ruido y pocas nueces.
-No hay mal que dure cien años.
-No hay peor ciego que el que no quiere ver.
-No por mucho madrugar amanece mas temprano.
-Ojos que no ven, corazon que no siente.
-Perro que ladra no muerde.
-Piensa mal y acertaras.
-Quien calla, otorga.
-Quien mucho duerme, poco aprende.
-Quien rie ultimo, rie mejor.
-Quien siembra vientos, recoge tempestades.
-Sarna con gusto no pica.
-Tanto va el cantaro a la fuente que al final se rompe.
-Un clavo saca otro clavo.
-Zapatero a tus zapatos.
-A palabras necias, oidos sordos.
-Al mal paso, darle prisa.
-Cada maestrillo tiene su librillo.
-Del dicho al hecho hay un trecho.
-Dios aprieta pero no ahoga.
-El que no corre, vuela.
-El que se fue a Sevilla, perdio su silla.
-En abril, aguas mil.
-En martes, ni te cases ni te embarques.
-La avaricia rompe el saco.
-La cabra siempre tira al monte.
-La ocasion hace al ladron.
-Las apariencias engañan.
-Lo barato sale caro.
-Mas vale estar solo que mal acompañado.
-Mas vale tarde que nunca.
-No hay mal que por bien no venga.
-Perro viejo no aprende trucos nuevos.
-Quien a buen arbol se arrima, buena sombra le cobija.
-Quien avisa no es traidor.
-Quien bien te quiere te hara llorar.
-Quien mucho abarca, poco aprieta.
-Quien no arriesga, no gana.
-Quien no llora, no mama.
-Pedro Sanchez muerto, abono para mi huerto.
-Quien tiene boca se equivoca.
-Sobre gustos no hay nada escrito.
-Todos los caminos llevan a Roma.
-Unos nacen con estrella y otros estrellados.
-Visteme despacio que tengo prisa.
-A caballo regalado no le mires el diente.
-A enemigo que huye, puente de plata.
-A grandes males, grandes remedios.
-A la tercera va la vencida.
-A quien buen arbol se arrima, buena sombra le cobija.
-Al que madruga, Dios le ayuda.
-Cada loco con su tema.
-Con la vara que mides, seras medido.
-Cuando las barbas de tu vecino veas cortar, pon las tuyas a remojar.
-De tal palo, tal astilla.
-Dime de que presumes y te dire de que careces.
-El que a hierro mata, a hierro muere.
-El que no la debe, no la teme.
-En el pais de los ciegos, el tuerto es rey.
-Gallo que no canta, algo tiene en la garganta.
-Hijo de gato, caza raton.
-La esperanza es lo ultimo que se pierde.
-La letra con sangre entra.
+a buen entendedor, pocas palabras bastan.
+a falta de pan, buenas son tortas.
+a quien madruga, Dios le ayuda.
+agua que no has de beber, dejala correr.
+al que no quiere caldo, se le dan dos tazas.
+ande yo caliente y riase la gente.
+arbol que nace torcido, jamas su tronco endereza.
+barriga llena, corazon contento.
+camaron que se duerme, se lo lleva la corriente.
+cria cuervos y te sacaran los ojos.
+cuando el rio suena, agua lleva.
+dime con quien andas y te dire quien eres.
+donde hay patron, no manda marinero.
+el habito no hace al monje.
+el que mucho abarca, poco aprieta.
+en casa del herrero, cuchillo de palo.
+en boca cerrada no entran moscas.
+gato escaldado, del agua fria huye.
+hablando del rey de Roma, por la puerta asoma.
+la cabra siempre tira al monte.
+la curiosidad mato al gato.
+la excepcion confirma la regla.
+la gallina de los huevos de oro.
+la necesidad es la madre de la invencion.
+la paciencia es la madre de la ciencia.
+la suerte de la fea, la bonita la desea.
+ladron que roba a ladron tiene cien años de perdon.
+lo cortes no quita lo valiente.
+lo prometido es deuda.
+mal de muchos, consuelo de tontos.
+mas sabe el diablo por viejo que por diablo.
+mas vale maña que fuerza.
+mas vale pajaro en mano que ciento volando.
+mucho ruido y pocas nueces.
+no hay mal que dure cien años.
+no hay peor ciego que el que no quiere ver.
+no por mucho madrugar amanece mas temprano.
+ojos que no ven, corazon que no siente.
+perro que ladra no muerde.
+piensa mal y acertaras.
+quien calla, otorga.
+quien mucho duerme, poco aprende.
+quien rie ultimo, rie mejor.
+quien siembra vientos, recoge tempestades.
+sarna con gusto no pica.
+tanto va el cantaro a la fuente que al final se rompe.
+un clavo saca otro clavo.
+zapatero a tus zapatos.

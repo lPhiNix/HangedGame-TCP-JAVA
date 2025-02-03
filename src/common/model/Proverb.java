@@ -5,12 +5,14 @@ import java.util.List;
 
 public class Proverb {
     private final List<Object> elements;
+    private final String text;
 
     public Proverb(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty");
         }
 
+        this.text = text;
         this.elements = parseTextToElements(text);
     }
 
@@ -37,18 +39,32 @@ public class Proverb {
         return result;
     }
 
-    public boolean guessCharacter(char c) {
+    public boolean guessConsonant(char c) {
         boolean guessedCorrectly = false;
-
         for (Object element : elements) {
             if (element instanceof Word word) {
-                if (word.guessCharacter(c)) {
+                if (word.guessConsonant(c)) {
                     guessedCorrectly = true;
                 }
             }
         }
-
         return guessedCorrectly;
+    }
+
+    public boolean guessVowel(char c) {
+        boolean guessedCorrectly = false;
+        for (Object element : elements) {
+            if (element instanceof Word word) {
+                if (word.guessVowel(c)) {
+                    guessedCorrectly = true;
+                }
+            }
+        }
+        return guessedCorrectly;
+    }
+
+    public boolean resolveProverb(String guess) {
+        return text.equalsIgnoreCase(guess);
     }
 
     public boolean isRevealed() {
@@ -60,6 +76,10 @@ public class Proverb {
             }
         }
         return true;
+    }
+
+    public String getText() {
+        return text;
     }
 
     @Override

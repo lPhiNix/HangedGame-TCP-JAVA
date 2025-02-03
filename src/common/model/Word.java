@@ -31,14 +31,33 @@ public class Word {
         return hiddenWord.clone();
     }
 
-    public static String getCharactersBlacklist() {
-        StringBuilder builder = new StringBuilder();
+    public boolean guessConsonant(char c) {
+        if (!isConsonant(c)) return false;
+        return revealCharacter(c);
+    }
 
-        for (char c : CHARACTERS_BLACKLIST) {
-            builder.append(c);
+    public boolean guessVowel(char c) {
+        if (!isVowel(c)) return false;
+        return revealCharacter(c);
+    }
+
+    private boolean isVowel(char c) {
+        return "aeiouAEIOU".indexOf(c) >= 0;
+    }
+
+    private boolean isConsonant(char c) {
+        return Character.isLetter(c) && !isVowel(c);
+    }
+
+    private boolean revealCharacter(char c) {
+        boolean guessedCorrectly = false;
+        for (int i = 0; i < characters.length; i++) {
+            if (characters[i] == c) {
+                hiddenWord[i] = c;
+                guessedCorrectly = true;
+            }
         }
-
-        return builder.toString();
+        return guessedCorrectly;
     }
 
     public boolean guessCharacter(char c) {
@@ -85,6 +104,16 @@ public class Word {
             }
         }
         return true;
+    }
+
+    public static String getCharactersBlacklist() {
+        StringBuilder builder = new StringBuilder();
+
+        for (char c : CHARACTERS_BLACKLIST) {
+            builder.append(c);
+        }
+
+        return builder.toString();
     }
 
     @Override

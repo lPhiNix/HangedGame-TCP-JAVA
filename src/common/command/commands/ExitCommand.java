@@ -23,7 +23,6 @@ public class ExitCommand implements Command {
         logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
 
         clientHandler.setRunning(false);
-        clientHandler.closeConnection();
     }
 
     public static String getCommandName() {

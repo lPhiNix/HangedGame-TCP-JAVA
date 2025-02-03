@@ -8,7 +8,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class AbstractClient {
+public class AbstractClient implements Client {
     private static final String SERVER_HOST = "localhost";
     private static final int SERVER_PORT = 2050;
     private Socket socket;
@@ -27,7 +27,8 @@ public class AbstractClient {
         }
     }
 
-    public void start() {
+    @Override
+    public void start() throws IOException {
         try {
             Scanner scanner = new Scanner(System.in);
 
@@ -35,20 +36,25 @@ public class AbstractClient {
             System.out.println("Bienvenido al juego de la ruleta.");
 
             Thread inputThread = new Thread(() -> {
-                while (true) {
+                String line = "";
+                while (line != null) {
                     try {
-                        System.out.println(inputReader.readLine());
-                    } catch (Exception e) {
+                        line = inputReader.readLine();
+                    } catch (IOException e) {
                         throw new RuntimeException(e);
+                    }
+                    if (line != null) {
+                        System.out.println(line);
                     }
                 }
             });
 
             inputThread.start();
 
-            // Comando del cliente
+            String exitCommandLine = CommandFactory.getCommandSymbol() + ExitCommand.getCommandName();
             String commandLine = "";
-            while (!commandLine.equals(CommandFactory.getCommandSymbol() + ExitCommand.getCommandName())) {
+
+            while (!commandLine.equals(exitCommandLine)) {
                 System.out.print("> ");
                 commandLine = scanner.nextLine().trim();
                 outputWriter.println(commandLine);

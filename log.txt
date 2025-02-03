@@ -1,0 +1,97 @@
+[03/02/2025 12:09:59] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[03/02/2025 12:10:02] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[03/02/2025 12:10:02] <server.service.AbstractWorker> [INFO]: Esperando comandos del cliente
+[03/02/2025 12:10:07] <common.command.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[03/02/2025 12:10:07] <common.command.commands.LoginCommand> [INFO]: Ejecutando comando /login
+[03/02/2025 12:10:07] <server.service.AbstractWorker> [INFO]: Sesión iniciada con exito!
+[03/02/2025 12:12:58] <common.command.CommandProcessor> [INFO]: Procesando comando: /singlegame
+[03/02/2025 12:12:58] <common.command.commands.StartSingleGameCommand> [INFO]: Ejecutando comando /singlegame
+[03/02/2025 12:13:05] <common.command.CommandProcessor> [INFO]: Procesando comando: l
+[03/02/2025 12:13:05] <common.command.CommandFactory> [WARNING]: Command not found: l
+[03/02/2025 12:13:05] <server.service.AbstractWorker> [WARNING]: Comando no reconocido.
+[03/02/2025 12:13:11] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel
+[03/02/2025 12:13:21] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[03/02/2025 12:13:21] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:13:33] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[03/02/2025 12:13:33] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:13:39] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[03/02/2025 12:13:39] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:13:44] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[03/02/2025 12:13:44] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:13:52] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[03/02/2025 12:13:52] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:14:12] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant t
+[03/02/2025 12:14:12] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:14:24] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant r
+[03/02/2025 12:14:24] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:15:29] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[03/02/2025 12:15:29] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:15:37] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[03/02/2025 12:15:37] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:15:55] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[03/02/2025 12:15:55] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:16:34] <common.command.CommandProcessor> [INFO]: Procesando comando: /solve un clavo saca otro clavo
+[03/02/2025 12:16:34] <common.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve
+[03/02/2025 12:16:46] <common.command.CommandProcessor> [INFO]: Procesando comando: /singlegame
+[03/02/2025 12:16:46] <common.command.commands.StartSingleGameCommand> [INFO]: Ejecutando comando /singlegame
+[03/02/2025 12:17:04] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[03/02/2025 12:17:04] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:17:14] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[03/02/2025 12:17:14] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:17:26] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[03/02/2025 12:17:26] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:17:31] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[03/02/2025 12:17:31] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:17:38] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[03/02/2025 12:17:38] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 12:17:58] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant m
+[03/02/2025 12:17:58] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:18:03] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant s
+[03/02/2025 12:18:03] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:18:07] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant v
+[03/02/2025 12:18:07] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:18:14] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant ñ
+[03/02/2025 12:18:14] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 12:18:32] <common.command.CommandProcessor> [INFO]: Procesando comando: /solve mas vale maña que fuerza.
+[03/02/2025 12:18:32] <common.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve
+[03/02/2025 12:43:47] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[03/02/2025 12:43:52] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[03/02/2025 12:43:52] <server.service.AbstractWorker> [INFO]: Esperando comandos del cliente
+[03/02/2025 12:43:58] <common.command.CommandProcessor> [INFO]: Procesando comando: /register Hitler 69
+[03/02/2025 12:43:58] <common.command.commands.RegisterCommand> [INFO]: Ejecutando comando /register
+[03/02/2025 12:43:58] <server.service.AbstractWorker> [INFO]: Ususario registrado con exito!
+[03/02/2025 12:44:03] <common.command.CommandProcessor> [INFO]: Procesando comando: /login Hitler 69
+[03/02/2025 12:44:03] <common.command.commands.LoginCommand> [INFO]: Ejecutando comando /login
+[03/02/2025 12:44:03] <server.service.AbstractWorker> [INFO]: Sesión iniciada con exito!
+[03/02/2025 13:00:49] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[03/02/2025 13:00:51] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[03/02/2025 13:00:51] <server.service.AbstractWorker> [INFO]: Esperando comandos del cliente
+[03/02/2025 13:00:55] <common.command.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[03/02/2025 13:00:55] <common.command.commands.LoginCommand> [INFO]: Ejecutando comando /login
+[03/02/2025 13:00:55] <server.service.AbstractWorker> [INFO]: Sesión iniciada con exito!
+[03/02/2025 13:01:05] <common.command.CommandProcessor> [INFO]: Procesando comando: /singlegame
+[03/02/2025 13:01:05] <common.command.commands.StartSingleGameCommand> [INFO]: Ejecutando comando /singlegame
+[03/02/2025 13:01:10] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[03/02/2025 13:01:10] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 13:01:17] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[03/02/2025 13:01:17] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 13:01:27] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[03/02/2025 13:01:27] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 13:01:49] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[03/02/2025 13:01:49] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 13:02:17] <common.command.CommandProcessor> [INFO]: Procesando comando: /solve quien mucho duerme, poco aprende.
+[03/02/2025 13:02:17] <common.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve
+[03/02/2025 13:06:34] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[03/02/2025 13:06:35] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[03/02/2025 13:06:35] <server.service.AbstractWorker> [INFO]: Esperando comandos del cliente
+[03/02/2025 13:06:41] <common.command.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[03/02/2025 13:06:41] <common.command.commands.LoginCommand> [INFO]: Ejecutando comando /login
+[03/02/2025 13:06:41] <server.service.AbstractWorker> [INFO]: Sesión iniciada con exito!
+[03/02/2025 13:06:58] <common.command.CommandProcessor> [INFO]: Procesando comando: /singlegame
+[03/02/2025 13:06:58] <common.command.commands.StartSingleGameCommand> [INFO]: Ejecutando comando /singlegame
+[03/02/2025 13:07:03] <common.command.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[03/02/2025 13:07:03] <common.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel
+[03/02/2025 13:07:17] <common.command.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[03/02/2025 13:07:17] <common.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant
+[03/02/2025 13:07:38] <common.command.CommandProcessor> [INFO]: Procesando comando: /solve a quien madruga, Dios le ayuda.
+[03/02/2025 13:07:38] <common.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve

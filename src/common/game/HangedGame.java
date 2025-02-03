@@ -10,25 +10,26 @@ import java.util.Random;
 
 public class HangedGame {
     private final ProverbManager proverbManager;
+    private final ScoreManager scoreManager;
     private final PrintWriter output;
-    private final User user;
     private Proverb proverb;
     private boolean gameOver = false;
 
-    public HangedGame(ProverbManager proverbManager, PrintWriter output, User user) {
-        this.proverbManager = proverbManager;
+    public HangedGame(PrintWriter output, User user) {
+        this.proverbManager = ProverbManager.getInstance();
         this.output = output;
-        this.user = user;
+        this.scoreManager = new ScoreManager(user, output);
     }
 
     public void startGame() throws IOException {
         output.println("Iniciando una nueva partida...");
-
         proverb = proverbManager.createProverb(new Random().nextInt(proverbManager.getProverbs().size()));
         output.println("La frase oculta es: " + proverb);
+        scoreManager.resetTries();
     }
 
     public boolean guessConsonant(char consonant) {
+        scoreManager.incrementTries();
         boolean correct = proverb.guessConsonant(consonant);
         if (correct) {
             output.println("¡Correcto!");
@@ -40,6 +41,7 @@ public class HangedGame {
     }
 
     public boolean guessVowel(char vowel) {
+        scoreManager.incrementTries();
         boolean correct = proverb.guessVowel(vowel);
         if (correct) {
             output.println("¡Correcto!");
@@ -53,10 +55,10 @@ public class HangedGame {
     public void resolveProverb(String phrase) {
         if (proverb.getText().equalsIgnoreCase(phrase)) {
             output.println("¡Felicidades! Has resuelto el proverbio.");
-            user.addScore(10);
-            output.println("Tu puntuación final es: " + user.getScore());
+            scoreManager.addScore();
+            scoreManager.printFinalScore(true);
         } else {
-            output.println("Respuesta incorrecta. Fin del juego.");
+            scoreManager.printFinalScore(false);
         }
         gameOver = true;
     }

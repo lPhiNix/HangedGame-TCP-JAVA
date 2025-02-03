@@ -8,11 +8,20 @@ import java.util.Map;
 
 public class UserManager {
     private static final String FILE_PATH = "users.txt";
+    private static UserManager instance;
     private final Map<String, User> users;
 
-    public UserManager() {
+    private UserManager() {
         users = new HashMap<>();
         loadUsersFromFile();
+    }
+
+    public static UserManager getInstance() {
+        if (instance == null) {
+            instance = new UserManager();
+        }
+
+        return instance;
     }
 
     public boolean registerUser(String username, String password) {
@@ -29,6 +38,18 @@ public class UserManager {
             return user;
         }
         return null;
+    }
+
+    public void updateStatatisticsUser(User newUser) {
+        String username = newUser.getUsername();
+
+        for (String thatName : users.keySet()) {
+            if (thatName.equals(username)) {
+                users.put(username, newUser);
+            }
+        }
+
+        saveUsersToFile();
     }
 
     private void loadUsersFromFile() {
@@ -57,7 +78,7 @@ public class UserManager {
         }
     }
 
-    private void saveUsersToFile() {
+    public void saveUsersToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (User user : users.values()) {
                 writer.write(user.getUsername() + ","

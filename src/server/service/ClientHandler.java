@@ -1,10 +1,8 @@
-package server;
+package server.service;
 
 import common.command.CommandProcessor;
 import common.game.HangedGame;
 import common.model.User;
-import common.util.ProverbManager;
-import common.util.UserManager;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -12,15 +10,11 @@ import java.util.logging.Level;
 
 public class ClientHandler extends AbstractWorker {
     private final CommandProcessor commandProcessor;
-    private final ProverbManager proverbManager;
-    private final UserManager userManager;
     private HangedGame gameSession;
     private User currentUser;
 
-    public ClientHandler(Socket socket, UserManager userManager, ProverbManager proverbManager) {
+    public ClientHandler(Socket socket) {
         super(socket);
-        this.userManager = userManager;
-        this.proverbManager = proverbManager;
         commandProcessor = new CommandProcessor();
     }
 
@@ -48,16 +42,12 @@ public class ClientHandler extends AbstractWorker {
             return;
         }
 
-        gameSession = new HangedGame(proverbManager, output, currentUser);
+        gameSession = new HangedGame(output, currentUser);
         try {
             gameSession.startGame();
         } catch (IOException e) {
             output.println("Error iniciando el juego.");
         }
-    }
-
-    public UserManager getUserManager() {
-        return userManager;
     }
 
     public User getCurrentUser() {

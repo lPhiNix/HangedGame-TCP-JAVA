@@ -1,8 +1,7 @@
 package server;
 
 import common.logger.CustomLogger;
-import common.util.ProverbManager;
-import common.util.UserManager;
+import server.service.ClientHandler;
 
 import java.io.*;
 import java.net.*;
@@ -15,16 +14,12 @@ public class HangedServer implements Server {
     private final int port;
     private final int maxUsers;
     private final ExecutorService threadPool;
-    private final UserManager userManager;
-    private final ProverbManager proverbManager;
 
-    public HangedServer(int port, int maxUsers, String proverbsFileName) {
+    public HangedServer(int port, int maxUsers) {
         this.port = port;
         this.maxUsers = maxUsers;
 
         threadPool = Executors.newFixedThreadPool(maxUsers);
-        userManager = new UserManager();
-        proverbManager = new ProverbManager(proverbsFileName);
     }
 
     @Override
@@ -40,7 +35,7 @@ public class HangedServer implements Server {
 
                 Socket clientSocket = serverSocket.accept();
                 logger.log(Level.INFO, "Nueva conexión aceptada desde: {0}", clientSocket.getInetAddress());
-                threadPool.submit(new ClientHandler(clientSocket, userManager, proverbManager)); // Crear un nuevo hilo para cada cliente
+                threadPool.submit(new ClientHandler(clientSocket)); // Crear un nuevo hilo para cada cliente
             }
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error al iniciar el servidor: {0}", e.getMessage());

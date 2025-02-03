@@ -12,18 +12,28 @@ import java.util.logging.Logger;
 
 public class ProverbManager {
     private static final Logger logger = CustomLogger.getLogger(ProverbManager.class.getName());
+    private static final String FILE_PATH = "proverbs.txt";
     private static final String ABC = "abcdefghijklnmñopqrstuvwxyz";
+    private static ProverbManager instance;
     private Map<Integer, String> proverbs;
 
-    public ProverbManager(String filePath) {
-        proverbs = loadProverbs(filePath);
+    private ProverbManager() {
+        proverbs = loadProverbs();
     }
 
-    private Map<Integer, String> loadProverbs(String filePath) {
-        File proverbsFile = new File(filePath);
+    public static ProverbManager getInstance() {
+        if (instance == null) {
+            instance = new ProverbManager();
+        }
+
+        return instance;
+    }
+
+    private Map<Integer, String> loadProverbs() {
+        File proverbsFile = new File(FILE_PATH);
 
         if (!proverbsFile.exists()) {
-            logger.log(Level.SEVERE, "File not found: {0}", filePath);
+            logger.log(Level.SEVERE, "File not found: {0}", FILE_PATH);
         }
 
         Map<Integer, String> proverbsMap = new HashMap<>();
@@ -93,7 +103,7 @@ public class ProverbManager {
         return proverbs;
     }
 
-    public void reloadProverbs(String filePath) {
-        proverbs = loadProverbs(filePath);
+    public void reloadProverbs() {
+        proverbs = loadProverbs();
     }
 }

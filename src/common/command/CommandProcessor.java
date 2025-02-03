@@ -1,6 +1,6 @@
 package common.command;
 
-import server.ClientHandler;
+import server.service.ClientHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -41,14 +41,6 @@ public class Word {
         return revealCharacter(c);
     }
 
-    private boolean isVowel(char c) {
-        return "aeiouAEIOU".indexOf(c) >= 0;
-    }
-
-    private boolean isConsonant(char c) {
-        return Character.isLetter(c) && !isVowel(c);
-    }
-
     private boolean revealCharacter(char c) {
         boolean guessedCorrectly = false;
         for (int i = 0; i < characters.length; i++) {
@@ -60,15 +52,12 @@ public class Word {
         return guessedCorrectly;
     }
 
-    public boolean guessCharacter(char c) {
-        boolean guessedCorrectly = false;
-        for (int i = 0; i < characters.length; i++) {
-            if (characters[i] == c) {
-                hiddenWord[i] = c;
-                guessedCorrectly = true;
-            }
-        }
-        return guessedCorrectly;
+    private boolean isVowel(char c) {
+        return "aeiouAEIOU".indexOf(c) >= 0;
+    }
+
+    private boolean isConsonant(char c) {
+        return Character.isLetter(c) && !isVowel(c);
     }
 
     public boolean isRevealed() {
@@ -91,7 +80,7 @@ public class Word {
         char[] hidden = new char[characters.length];
 
         for (int i = 0; i < characters.length; i++) {
-            hidden[i] = HIDE_CHARACTER; // Use an underscore to represent hidden characters
+            hidden[i] = HIDE_CHARACTER;
         }
 
         return hidden;

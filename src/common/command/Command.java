@@ -1,6 +1,6 @@
 package common.command;
 
-import server.ClientHandler;
+import server.service.ClientHandler;
 
 public interface Command {
     void execute(String[] args, ClientHandler clientHandler);

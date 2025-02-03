@@ -3,7 +3,7 @@ package common.command.commands;
 import common.command.Command;
 import common.command.CommandFactory;
 import common.logger.CustomLogger;
-import server.ClientHandler;
+import server.service.ClientHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

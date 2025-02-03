@@ -5,7 +5,7 @@ import common.command.CommandFactory;
 import common.logger.CustomLogger;
 import common.model.User;
 import common.util.UserManager;
-import server.ClientHandler;
+import server.service.ClientHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +29,7 @@ public class RegisterCommand implements Command {
         String username = args[0];
         String password = args[1];
 
-        UserManager manager = clientHandler.getUserManager();
+        UserManager manager = UserManager.getInstance();
 
         User user = manager.authenticate(username, password);
 

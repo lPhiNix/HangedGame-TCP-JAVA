@@ -2,7 +2,9 @@ package common.game;
 
 import common.model.Proverb;
 import common.model.User;
-import server.service.ProverbManager;
+import server.service.ServiceRegister;
+import server.service.services.ProverbManager;
+import server.service.services.UserManager;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,10 +17,12 @@ public class HangedGame {
     private Proverb proverb;
     private boolean gameOver = false;
 
-    public HangedGame(PrintWriter output, User user) {
-        this.proverbManager = ProverbManager.getInstance();
+    public HangedGame(PrintWriter output, User user, ServiceRegister serviceRegister) {
+        this.proverbManager = (ProverbManager) serviceRegister.getService(ProverbManager.class);
         this.output = output;
-        this.scoreManager = new ScoreManager(user, output);
+
+        UserManager userManager = (UserManager) serviceRegister.getService(UserManager.class);
+        this.scoreManager = new ScoreManager(userManager, user, output);
     }
 
     public void startGame() throws IOException {

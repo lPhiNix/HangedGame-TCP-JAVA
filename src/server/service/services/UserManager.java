@@ -1,27 +1,19 @@
-package server.service;
+package server.service.services;
 
 import common.model.User;
+import server.service.Service;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserManager {
+public class UserManager implements Service {
     private static final String FILE_PATH = "users.txt";
-    private static UserManager instance;
     private final Map<String, User> users;
 
-    private UserManager() {
+    public UserManager() {
         users = new HashMap<>();
         loadUsersFromFile();
-    }
-
-    public static UserManager getInstance() {
-        if (instance == null) {
-            instance = new UserManager();
-        }
-
-        return instance;
     }
 
     public boolean registerUser(String username, String password) {

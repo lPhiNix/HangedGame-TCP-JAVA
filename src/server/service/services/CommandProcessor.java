@@ -1,11 +1,14 @@
-package common.command;
+package server.service.services;
 
+import server.command.Command;
+import server.command.CommandFactory;
+import server.service.Service;
 import server.thread.ClientHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CommandProcessor {
+public class CommandProcessor implements Service {
     private static final Logger logger = Logger.getLogger(CommandProcessor.class.getName());
     private final CommandFactory commandFactory;
 

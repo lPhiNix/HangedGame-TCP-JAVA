@@ -1,6 +1,6 @@
-package common.command;
+package server.command;
 
-import common.command.commands.*;
+import server.command.commands.*;
 import common.logger.CustomLogger;
 
 import java.util.HashMap;

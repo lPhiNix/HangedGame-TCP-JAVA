@@ -1,6 +1,6 @@
-package common.command.commands;
+package server.command.commands;
 
-import common.command.Command;
+import server.command.Command;
 import common.logger.CustomLogger;
 import server.thread.ClientHandler;
 

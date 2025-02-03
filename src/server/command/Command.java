@@ -1,4 +1,4 @@
-package common.command;
+package server.command;
 
 import server.thread.ClientHandler;
 

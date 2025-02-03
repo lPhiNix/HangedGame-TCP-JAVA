@@ -1,17 +1,19 @@
 package common.game;
 
 import common.model.User;
-import server.service.UserManager;
+import server.service.services.UserManager;
 
 import java.io.PrintWriter;
 
 public class ScoreManager {
-    private final User user;
+    private final UserManager userManager;
+    private final User currentUser;
     private final PrintWriter output;
     private int tries;
 
-    public ScoreManager(User user, PrintWriter output) {
-        this.user = user;
+    public ScoreManager(UserManager userManager, User currentUser, PrintWriter output) {
+        this.userManager = userManager;
+        this.currentUser = currentUser;
         this.output = output;
         this.tries = 0;
     }
@@ -22,7 +24,7 @@ public class ScoreManager {
 
     public void addScore() {
         Score score = Score.fromTries(tries);
-        user.addScore(score.getScoreAmount());
+        currentUser.addScore(score.getScoreAmount());
     }
 
     public int getTries() {
@@ -40,16 +42,16 @@ public class ScoreManager {
             Score score = Score.fromTries(tries);
             output.println("Has logrado un puntaje de: " + score.getScoreAmount());
 
-            output.println("Puntuación final: " + user.getScore());
+            output.println("Puntuación final: " + currentUser.getScore());
 
-            user.win(1);
+            currentUser.win(1);
         } else {
             output.println("Respuesta incorrecta. Fin del juego.");
 
-            user.defeat(1);
+            currentUser.defeat(1);
         }
 
-        UserManager.getInstance().updateStatatisticsUser(user);
+        userManager.updateStatatisticsUser(currentUser);
     }
 }
 

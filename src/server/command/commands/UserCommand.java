@@ -1,7 +1,7 @@
-package common.command.commands;
+package server.command.commands;
 
-import common.command.Command;
-import common.command.CommandFactory;
+import server.command.Command;
+import server.command.CommandFactory;
 import common.logger.CustomLogger;
 import common.model.User;
 import server.thread.ClientHandler;

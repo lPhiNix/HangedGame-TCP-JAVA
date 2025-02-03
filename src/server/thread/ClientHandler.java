@@ -1,6 +1,7 @@
 package server.thread;
 
-import common.command.CommandProcessor;
+import server.service.ServiceRegister;
+import server.service.services.CommandProcessor;
 import common.game.HangedGame;
 import common.model.User;
 
@@ -9,13 +10,13 @@ import java.net.Socket;
 import java.util.logging.Level;
 
 public class ClientHandler extends AbstractWorker {
-    private final CommandProcessor commandProcessor;
+    private final ServiceRegister serviceRegister;
     private HangedGame gameSession;
     private User currentUser;
 
-    public ClientHandler(Socket socket) {
+    public ClientHandler(Socket socket, ServiceRegister serviceRegister) {
         super(socket);
-        commandProcessor = new CommandProcessor();
+        this.serviceRegister = serviceRegister;
     }
 
     @Override
@@ -32,6 +33,7 @@ public class ClientHandler extends AbstractWorker {
 
         String commandLine;
         while (isRunning && (commandLine = input.readLine()) != null) {
+            CommandProcessor commandProcessor = (CommandProcessor) serviceRegister.getService(CommandProcessor.class);
             commandProcessor.processCommand(commandLine, this);
         }
     }
@@ -42,7 +44,7 @@ public class ClientHandler extends AbstractWorker {
             return;
         }
 
-        gameSession = new HangedGame(output, currentUser);
+        gameSession = new HangedGame(output, currentUser, serviceRegister);
         try {
             gameSession.startGame();
         } catch (IOException e) {
@@ -62,6 +64,9 @@ public class ClientHandler extends AbstractWorker {
         return gameSession;
     }
 
+    public ServiceRegister getServiceRegister() {
+        return serviceRegister;
+    }
 
     public boolean hasActiveGame() {
         return gameSession != null && !gameSession.isGameOver();

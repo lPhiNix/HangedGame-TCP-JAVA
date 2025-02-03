@@ -1,8 +1,9 @@
-package server.service;
+package server.service.services;
 
 import common.logger.CustomLogger;
 import common.model.Proverb;
 import common.model.Word;
+import server.service.Service;
 
 import java.io.*;
 import java.util.HashMap;
@@ -10,23 +11,14 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProverbManager {
+public class ProverbManager implements Service {
     private static final Logger logger = CustomLogger.getLogger(ProverbManager.class.getName());
     private static final String FILE_PATH = "proverbs.txt";
     private static final String ABC = "abcdefghijklnmñopqrstuvwxyz";
-    private static ProverbManager instance;
     private Map<Integer, String> proverbs;
 
-    private ProverbManager() {
+    public ProverbManager() {
         proverbs = loadProverbs();
-    }
-
-    public static ProverbManager getInstance() {
-        if (instance == null) {
-            instance = new ProverbManager();
-        }
-
-        return instance;
     }
 
     private Map<Integer, String> loadProverbs() {

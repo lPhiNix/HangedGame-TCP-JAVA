@@ -1,10 +1,10 @@
-package common.command.commands;
+package server.command.commands;
 
-import common.command.Command;
-import common.command.CommandFactory;
+import server.command.Command;
+import server.command.CommandFactory;
 import common.logger.CustomLogger;
 import common.model.User;
-import server.service.UserManager;
+import server.service.services.UserManager;
 import server.thread.ClientHandler;
 
 import java.util.logging.Level;
@@ -27,7 +27,7 @@ public class LoginCommand implements Command {
         String username = args[0];
         String password = args[1];
 
-        UserManager manager = UserManager.getInstance();
+        UserManager manager = (UserManager) clientHandler.getServiceRegister().getService(UserManager.class);
 
         User user = manager.authenticate(username, password);
 

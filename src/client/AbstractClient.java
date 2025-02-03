@@ -1,7 +1,7 @@
 package client;
 
-import common.command.CommandFactory;
-import common.command.commands.ExitCommand;
+import server.command.CommandFactory;
+import server.command.commands.ExitCommand;
 import common.model.User;
 
 import java.io.*;

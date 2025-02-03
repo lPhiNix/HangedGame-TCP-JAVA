@@ -20,11 +20,11 @@ public class RegisterCommand implements Command {
         if (args.length != parametersAmount) {
             logger.log(Level.INFO, "Sintaxis incorrecta de /{0} command", COMMAND_NAME);
             clientHandler.getOutput().println("Ayuda: " + CommandFactory.getCommandSymbol() +
-                    COMMAND_NAME + " <username> <password>");
+                    COMMAND_NAME + " <nombre> <contraseña>");
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando /{0} command", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
 
         String username = args[0];
         String password = args[1];
@@ -36,7 +36,7 @@ public class RegisterCommand implements Command {
         if (user == null && manager.registerUser(args[0], args[1])) {
             clientHandler.sendMessageBoth(Level.INFO, "Ususario registrado con exito!");
         } else {
-            clientHandler.sendMessageBoth(Level.WARNING, "El usuario ya existe");
+            clientHandler.sendMessageBoth(Level.WARNING, "El usuario introducido ya existe");
         }
     }
 

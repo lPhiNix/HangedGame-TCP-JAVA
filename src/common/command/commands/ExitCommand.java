@@ -20,7 +20,7 @@ public class ExitCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
 
         clientHandler.setRunning(false);
     }

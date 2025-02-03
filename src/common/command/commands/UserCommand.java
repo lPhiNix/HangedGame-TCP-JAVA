@@ -24,11 +24,11 @@ public class UserCommand implements Command {
         User currentUser = clientHandler.getCurrentUser();
 
         if (currentUser == null) {
-            clientHandler.getOutput().println("Logueate antes en el servidor para utilizar esta funcion!");
+            clientHandler.getOutput().println("Inicia sesión antes para utilizar esta funcion!");
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando /{0} command", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
 
         clientHandler.getOutput().println("Usuario: " + currentUser.getUsername());
     }

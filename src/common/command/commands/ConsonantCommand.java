@@ -1,6 +1,7 @@
 package common.command.commands;
 
 import common.command.Command;
+import common.command.CommandFactory;
 import common.logger.CustomLogger;
 import server.ClientHandler;
 
@@ -10,17 +11,19 @@ import java.util.logging.Logger;
 public class ConsonantCommand implements Command {
     private static final Logger logger = CustomLogger.getLogger(ConsonantCommand.class.getName());
     private static final String COMMAND_NAME = "consonant";
+    private static final int parametersAmount = 1;
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
-        logger.log(Level.INFO, "Start /{0} command", COMMAND_NAME);
-
-        if (!clientHandler.hasActiveGame()) {
-            clientHandler.getOutput().println("No tienes una partida activa.");
+        if (args.length != parametersAmount) {
+            clientHandler.getOutput().println("Ayuda: " + CommandFactory.getCommandSymbol() +
+                    COMMAND_NAME + " <consonante>");
             return;
         }
 
-        if (args.length != 1 || args[0].length() != 1) {
-            clientHandler.getOutput().println("Uso: /consonant <letra>");
+        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
+
+        if (!clientHandler.hasActiveGame()) {
+            clientHandler.getOutput().println("No tienes una partida activa.");
             return;
         }
 

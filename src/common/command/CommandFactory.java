@@ -16,15 +16,16 @@ public class CommandFactory {
     public CommandFactory() {
         commands = new HashMap<>();
 
+        registerCommand(HelpCommand.getCommandName(), HelpCommand.class);
         registerCommand(LoginCommand.getCommandName(), LoginCommand.class);
         registerCommand(RegisterCommand.getCommnadName(), RegisterCommand.class);
         registerCommand(UserCommand.getCommandName(), UserCommand.class);
-        registerCommand(StartSingleGameCommand.getCommandName(), StartSingleGameCommand.class);
+        registerCommand(SinglePlayerCommand.getCommandName(), SinglePlayerCommand.class);
+        registerCommand(MultiplayerCommand.getCommandName(), MultiplayerCommand.class);
         registerCommand(ConsonantCommand.getCommandName(), ConsonantCommand.class);
         registerCommand(VowelCommand.getCommandName(), VowelCommand.class);
         registerCommand(SolveCommand.getCommandName(), SolveCommand.class);
         registerCommand(ExitCommand.getCommandName(), ExitCommand.class);
-
     }
 
     public void registerCommand(String commandName, Class<? extends Command> commandClass) {

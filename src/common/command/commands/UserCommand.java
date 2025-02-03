@@ -6,6 +6,7 @@ import common.logger.CustomLogger;
 import common.model.User;
 import server.service.ClientHandler;
 
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +31,11 @@ public class UserCommand implements Command {
 
         logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
 
-        clientHandler.getOutput().println("Usuario: " + currentUser.getUsername());
+        PrintWriter output = clientHandler.getOutput();
+        output.println("Usuario: " + currentUser.getUsername());
+        output.println("Puntuación: " + currentUser.getScore());
+        output.println("Victorias: " + currentUser.getWins());
+        output.println("Derrotas: " + currentUser.getDefeats());
     }
 
     public static String getCommandName() {

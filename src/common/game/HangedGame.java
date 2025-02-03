@@ -53,7 +53,7 @@ public class HangedGame {
     }
 
     public void resolveProverb(String phrase) {
-        if (proverb.getText().equalsIgnoreCase(phrase)) {
+        if (proverb.resolveProverb(phrase)) {
             output.println("¡Felicidades! Has resuelto el proverbio.");
             scoreManager.addScore();
             scoreManager.printFinalScore(true);

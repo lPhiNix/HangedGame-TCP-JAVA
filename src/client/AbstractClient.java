@@ -28,7 +28,7 @@ public class AbstractClient implements Client {
     }
 
     @Override
-    public void start() throws IOException {
+    public void start() {
         try {
             Scanner scanner = new Scanner(System.in);
 

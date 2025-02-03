@@ -17,14 +17,14 @@ public class ServiceRegister {
         registerService(UserManager.class, new UserManager());
         registerService(ProverbManager.class, new ProverbManager());
         registerService(CommandProcessor.class, new CommandProcessor());
-        registerService(RoomManager.class, new CommandProcessor());
+        registerService(RoomManager.class, new RoomManager());
     }
 
     private void registerService(Class<? extends Service> classService, Service service) {
         services.put(classService, service);
     }
 
-    public synchronized Service getService(Class<? extends Service> classService) {
-        return services.get(classService);
+    public synchronized <T extends Service> T getService(Class<T> classService) {
+        return classService.cast(services.get(classService));
     }
 }

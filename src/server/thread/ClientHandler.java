@@ -1,8 +1,9 @@
 package server.thread;
 
+import common.game.multiPlayer.HangedRoom;
 import server.service.ServiceRegister;
 import server.service.services.CommandProcessor;
-import common.game.HangedGame;
+import common.game.singlePlayer.HangedGame;
 import common.model.User;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.logging.Level;
 public class ClientHandler extends AbstractWorker {
     private final ServiceRegister serviceRegister;
     private HangedGame gameSession;
+    private HangedRoom currentRoom;
     private User currentUser;
 
     public ClientHandler(Socket socket, ServiceRegister serviceRegister) {
@@ -33,7 +35,7 @@ public class ClientHandler extends AbstractWorker {
 
         String commandLine;
         while (isRunning && (commandLine = input.readLine()) != null) {
-            CommandProcessor commandProcessor = (CommandProcessor) serviceRegister.getService(CommandProcessor.class);
+            CommandProcessor commandProcessor = serviceRegister.getService(CommandProcessor.class);
             commandProcessor.processCommand(commandLine, this);
         }
     }
@@ -64,11 +66,27 @@ public class ClientHandler extends AbstractWorker {
         return gameSession;
     }
 
+    public void setGameSession(HangedGame gameSession) {
+        this.gameSession = gameSession;
+    }
+
+    public HangedRoom getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(HangedRoom currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
     public ServiceRegister getServiceRegister() {
         return serviceRegister;
     }
 
-    public boolean hasActiveGame() {
+    public boolean hasActiveSingleGame() {
         return gameSession != null && !gameSession.isGameOver();
+    }
+
+    public boolean hasActiveMultiplayerGame() {
+        return currentRoom != null && !currentRoom.isEmpty();
     }
 }

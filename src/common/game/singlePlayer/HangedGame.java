@@ -1,5 +1,6 @@
-package common.game;
+package common.game.singlePlayer;
 
+import common.game.score.ScoreManager;
 import common.model.Proverb;
 import common.model.User;
 import server.service.ServiceRegister;
@@ -18,10 +19,10 @@ public class HangedGame {
     private boolean gameOver = false;
 
     public HangedGame(PrintWriter output, User user, ServiceRegister serviceRegister) {
-        this.proverbManager = (ProverbManager) serviceRegister.getService(ProverbManager.class);
+        this.proverbManager = serviceRegister.getService(ProverbManager.class);
         this.output = output;
 
-        UserManager userManager = (UserManager) serviceRegister.getService(UserManager.class);
+        UserManager userManager = serviceRegister.getService(UserManager.class);
         this.scoreManager = new ScoreManager(userManager, user, output);
     }
 

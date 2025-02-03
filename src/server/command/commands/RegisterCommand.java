@@ -24,12 +24,12 @@ public class RegisterCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
 
         String username = args[0];
         String password = args[1];
 
-        UserManager manager = (UserManager) clientHandler.getServiceRegister().getService(UserManager.class);
+        UserManager manager = clientHandler.getServiceRegister().getService(UserManager.class);
 
         User user = manager.authenticate(username, password);
 

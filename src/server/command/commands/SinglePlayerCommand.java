@@ -21,7 +21,7 @@ public class SinglePlayerCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando /{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
 
         clientHandler.startGame();
     }

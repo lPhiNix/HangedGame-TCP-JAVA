@@ -2,7 +2,7 @@ package common.game;
 
 import common.model.Proverb;
 import common.model.User;
-import common.util.ProverbManager;
+import server.service.ProverbManager;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,7 +1,7 @@
 package server;
 
 import common.logger.CustomLogger;
-import server.service.ClientHandler;
+import server.thread.ClientHandler;
 
 import java.io.*;
 import java.net.*;

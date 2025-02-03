@@ -1,4 +1,4 @@
-package server.service;
+package server.thread;
 
 import common.logger.CustomLogger;
 

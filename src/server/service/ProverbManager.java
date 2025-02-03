@@ -1,4 +1,4 @@
-package common.util;
+package server.service;
 
 import common.logger.CustomLogger;
 import common.model.Proverb;

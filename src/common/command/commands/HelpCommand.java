@@ -2,7 +2,7 @@ package common.command.commands;
 
 import common.command.Command;
 import common.logger.CustomLogger;
-import server.service.ClientHandler;
+import server.thread.ClientHandler;
 
 import java.util.logging.Logger;
 

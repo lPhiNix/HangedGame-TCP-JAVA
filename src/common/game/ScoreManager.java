@@ -1,7 +1,7 @@
 package common.game;
 
 import common.model.User;
-import common.util.UserManager;
+import server.service.UserManager;
 
 import java.io.PrintWriter;
 

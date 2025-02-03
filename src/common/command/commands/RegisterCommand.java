@@ -4,8 +4,8 @@ import common.command.Command;
 import common.command.CommandFactory;
 import common.logger.CustomLogger;
 import common.model.User;
-import common.util.UserManager;
-import server.service.ClientHandler;
+import server.service.UserManager;
+import server.thread.ClientHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

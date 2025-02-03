@@ -1,4 +1,4 @@
-package common.util;
+package server.service;
 
 import common.model.User;
 

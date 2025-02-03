@@ -4,7 +4,7 @@ import common.command.Command;
 import common.command.CommandFactory;
 import common.logger.CustomLogger;
 import common.model.User;
-import server.service.ClientHandler;
+import server.thread.ClientHandler;
 
 import java.io.PrintWriter;
 import java.util.logging.Level;

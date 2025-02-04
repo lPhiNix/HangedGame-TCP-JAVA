@@ -26,12 +26,12 @@ public class ClientHandler extends AbstractWorker {
         try {
             handleCommands();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            logger.severe("Error al realizar lectura en " + socket.getInetAddress() + ": " + e.getMessage());
         }
     }
 
     private void handleCommands() throws Exception {
-        logger.log(Level.INFO, "Esperando comandos del cliente");
+        logger.log(Level.INFO, "Esperando comandos del cliente " + getFormatedUser());
 
         String commandLine;
         while (isRunning && (commandLine = input.readLine()) != null) {
@@ -41,16 +41,11 @@ public class ClientHandler extends AbstractWorker {
     }
 
     public void startGame() {
-        if (currentUser == null) {
-            output.println("Debes iniciar sesión antes de jugar.");
-            return;
-        }
-
         gameSession = new HangedGame(output, currentUser, serviceRegister);
         try {
             gameSession.startGame();
         } catch (IOException e) {
-            output.println("Error iniciando el juego.");
+            sendMessageBoth(Level.SEVERE, "Error al iniciar partida individual por " + getFormatedUser());
         }
     }
 
@@ -60,6 +55,14 @@ public class ClientHandler extends AbstractWorker {
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public String getFormatedUser() {
+        if (currentUser == null) {
+            return "Invitado " + socket.getInetAddress();
+        } else {
+            return currentUser.getUsername();
+        }
     }
 
     public HangedGame getGameSession() {

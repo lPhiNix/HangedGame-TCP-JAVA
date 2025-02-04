@@ -22,8 +22,7 @@ public class LoginCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
-
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
         String username = args[0];
         String password = args[1];
 
@@ -33,9 +32,11 @@ public class LoginCommand implements Command {
 
         if (user != null) {
             clientHandler.setCurrentUser(user);
-            clientHandler.sendMessageBoth(Level.INFO, "Sesión iniciada con exito!");
+            clientHandler.getOutput().println("Sesión iniciada con exito!");
+            logger.log(Level.INFO, clientHandler.getFormatedUser() + ": sesión iniciada con exito!");
         } else {
-            clientHandler.sendMessageBoth(Level.WARNING, "El usuario introducido no existe!");
+            clientHandler.getOutput().println("El usuario introducido no existe!");
+            logger.log(Level.INFO, clientHandler.getFormatedUser() + ": El usuario introducido no existe!");
         }
     }
 

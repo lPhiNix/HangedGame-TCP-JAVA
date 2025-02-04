@@ -29,7 +29,7 @@ public class UserCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
 
         PrintWriter output = clientHandler.getOutput();
         output.println("Usuario: " + currentUser.getUsername());

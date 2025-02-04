@@ -1,0 +1,460 @@
+[04/02/2025 01:00:02] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 01:00:19] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 01:00:24] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:00:24] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:00:26] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:00:26] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:00:30] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 01:00:30] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:00:30] <server.thread.AbstractWorker> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 01:00:37] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /register Hitler 1
+[04/02/2025 01:00:37] <server.command.commands.RegisterCommand> [INFO]: Ejecutando comando /register por /127.0.0.1
+[04/02/2025 01:00:37] <server.thread.AbstractWorker> [INFO]: /127.0.0.1: Ususario registrado con exito!
+[04/02/2025 01:00:53] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 01:00:53] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:00:53] <server.thread.AbstractWorker> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 01:01:16] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create negros
+[04/02/2025 01:01:16] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:01:28] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join negros
+[04/02/2025 01:01:28] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:01:28] <server.thread.AbstractWorker> [INFO]: Es tu turno. Escribe '/guess <letra>' para adivinar una consonante o vocal, o '/resolve <frase>' para resolver.
+[04/02/2025 01:01:44] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 01:01:44] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:06:13] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 01:06:15] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:06:15] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:06:18] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:06:18] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:06:23] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 01:06:23] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:06:23] <server.thread.AbstractWorker> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 01:06:28] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 01:06:28] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:06:28] <server.thread.AbstractWorker> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 01:06:39] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create negros
+[04/02/2025 01:06:39] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:06:46] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join negros
+[04/02/2025 01:06:46] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:06:46] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 01:07:15] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 01:07:15] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:08:22] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel v
+[04/02/2025 01:08:22] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:08:22] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 01:08:31] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 01:08:31] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 01:08:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 01:08:45] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:08:50] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 01:08:50] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:09:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve la suerte de la fea, la bonita la desea.
+[04/02/2025 01:09:45] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 01:09:56] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singlesplayer
+[04/02/2025 01:09:56] <server.command.CommandFactory> [WARNING]: Commando no encontrado: singlesplayer
+[04/02/2025 01:09:56] <server.thread.AbstractWorker> [WARNING]: Comando no reconocido.
+[04/02/2025 01:10:01] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 01:10:01] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 01:10:10] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create sio
+[04/02/2025 01:23:23] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 01:23:26] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:23:26] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:23:28] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 01:23:28] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 01:23:33] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 01:23:33] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:23:33] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 01:23:39] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 01:23:39] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 01:23:39] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 01:23:50] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create niggers
+[04/02/2025 01:23:50] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:24:06] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join niggers
+[04/02/2025 01:24:06] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 01:24:06] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 01:24:21] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 01:24:21] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:24:25] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 01:24:25] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:24:29] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 01:24:29] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:24:33] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 01:24:33] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:24:40] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 01:24:40] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 01:24:48] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 01:24:48] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 01:25:21] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant s
+[04/02/2025 01:25:21] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 01:25:27] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant z
+[04/02/2025 01:25:27] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 01:25:27] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 01:25:48] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve lo prometido es deuda.
+[04/02/2025 01:25:48] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 01:26:31] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 01:26:31] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 01:26:41] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 01:26:41] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:12:02] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:12:05] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:12:05] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:12:12] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:12:12] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:12:12] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:12:15] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:12:15] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:13:18] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:13:21] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:13:27] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:13:27] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:13:30] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:13:30] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:13:30] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:13:35] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:13:35] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:14:14] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:14:16] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:14:16] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:14:18] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /romms
+[04/02/2025 10:14:18] <server.command.CommandFactory> [WARNING]: Commando no encontrado: romms
+[04/02/2025 10:14:18] <server.thread.AbstractWorker> [WARNING]: Comando no reconocido.
+[04/02/2025 10:14:21] <server.service.services.CommandProcessor> [INFO]: Procesando comando: rooms
+[04/02/2025 10:14:21] <server.command.CommandFactory> [WARNING]: Commando no encontrado: rooms
+[04/02/2025 10:14:21] <server.thread.AbstractWorker> [WARNING]: Comando no reconocido.
+[04/02/2025 10:14:25] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:14:25] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:14:31] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:14:31] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:14:31] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:14:44] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create si
+[04/02/2025 10:14:44] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:14:48] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:14:48] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:18:14] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:18:17] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:18:17] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:18:23] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:18:23] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:18:32] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:18:32] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:18:32] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:18:37] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:18:37] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:18:37] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:18:41] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 10:18:41] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 10:18:46] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 10:18:46] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 10:19:13] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create negros
+[04/02/2025 10:19:13] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:20:54] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:20:55] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:20:55] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:20:59] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:20:59] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:21:09] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:21:09] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:21:09] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:21:15] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:21:15] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:21:15] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:22:07] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create negros
+[04/02/2025 10:22:07] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:22:07] <server.thread.AbstractWorker> [CONFIG]: Sala negros creada con exito.
+[04/02/2025 10:22:12] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:22:12] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:22:36] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join negros
+[04/02/2025 10:22:36] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:22:36] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:22:42] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 10:22:42] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:22:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 10:22:45] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:22:50] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 10:22:50] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:23:00] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[04/02/2025 10:23:00] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:23:06] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[04/02/2025 10:23:06] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:23:10] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 10:23:10] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:23:21] <server.service.services.CommandProcessor> [INFO]: Procesando comando: wdke
+[04/02/2025 10:23:21] <server.command.CommandFactory> [WARNING]: Commando no encontrado: wdke
+[04/02/2025 10:23:21] <server.thread.AbstractWorker> [WARNING]: Comando no reconocido.
+[04/02/2025 10:23:26] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 10:23:26] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:23:35] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant y
+[04/02/2025 10:23:35] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:23:51] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant c
+[04/02/2025 10:23:51] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:23:55] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 10:23:55] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:24:05] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 10:24:05] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:24:05] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:24:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant d
+[04/02/2025 10:24:45] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:24:49] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant m
+[04/02/2025 10:24:49] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:25:12] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve dime con quien andas y te dire quien eres.
+[04/02/2025 10:25:12] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 10:25:27] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:25:27] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:25:40] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer leave
+[04/02/2025 10:25:40] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:25:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:25:45] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:25:56] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer leave
+[04/02/2025 10:25:56] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:25:58] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:25:58] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:30:16] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:30:20] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:30:20] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:30:24] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:30:24] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:30:28] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:30:28] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:30:28] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:30:34] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:30:34] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:30:34] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:30:37] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 10:30:37] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 10:30:39] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 10:30:39] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 10:31:00] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create sala
+[04/02/2025 10:31:00] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:31:00] <server.thread.AbstractWorker> [CONFIG]: Sala sala creada con exito.
+[04/02/2025 10:31:05] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:31:05] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:31:24] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join sala
+[04/02/2025 10:31:24] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:31:24] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:31:30] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 10:31:30] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:31:33] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 10:31:33] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:31:37] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 10:31:37] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:31:42] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 10:31:42] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:31:46] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 10:31:46] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:31:51] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[04/02/2025 10:31:51] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:31:55] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[04/02/2025 10:31:55] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:32:12] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 10:32:12] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:32:12] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:32:32] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant m
+[04/02/2025 10:32:32] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:32:40] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant c
+[04/02/2025 10:32:40] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:32:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant h
+[04/02/2025 10:32:45] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:33:07] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve quien mucho duerme, poco aprende.
+[04/02/2025 10:33:07] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 10:36:42] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:36:42] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:36:48] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:36:48] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:36:55] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 10:36:55] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 10:36:59] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 10:36:59] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 10:37:08] <server.thread.AbstractWorker> [SEVERE]: Error al gestionar la entrada del cliente: java.net.SocketException: Connection reset
+[04/02/2025 10:37:08] <server.thread.AbstractWorker> [INFO]: Conexión cerrada para: /127.0.0.1
+[04/02/2025 10:37:09] <server.thread.AbstractWorker> [SEVERE]: Error al gestionar la entrada del cliente: java.net.SocketException: Connection reset
+[04/02/2025 10:37:09] <server.thread.AbstractWorker> [INFO]: Conexión cerrada para: /127.0.0.1
+[04/02/2025 10:46:40] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:46:43] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:46:43] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:46:47] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:46:47] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:46:53] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:46:53] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:46:53] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:46:58] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:46:58] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:46:58] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:47:09] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create negris
+[04/02/2025 10:47:09] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:47:09] <server.thread.AbstractWorker> [CONFIG]: Sala negris creada con exito.
+[04/02/2025 10:47:23] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join negris
+[04/02/2025 10:47:23] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:47:23] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:47:30] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 10:47:30] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:47:35] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 10:47:35] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:47:42] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 10:47:42] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:47:46] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 10:47:46] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:47:52] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 10:47:52] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:47:58] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[04/02/2025 10:47:58] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:48:41] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve quien siembra vientos, recoge tempestos.
+[04/02/2025 10:48:41] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 10:48:41] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:49:09] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve quien siembra vientos, recoge tempestades.
+[04/02/2025 10:49:09] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 10:49:18] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:49:18] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:51:15] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:51:16] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:51:16] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:51:20] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:51:20] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:51:24] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:51:24] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:24] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:51:28] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login ijx
+[04/02/2025 10:51:34] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login ke dewd
+[04/02/2025 10:51:34] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:34] <server.command.commands.LoginCommand> [INFO]: /127.0.0.1: El usuario introducido no existe!
+[04/02/2025 10:51:43] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:51:43] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:43] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:51:49] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:51:49] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:49] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:51:53] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:51:53] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:53] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:51:57] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:51:57] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:51:57] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:51:58] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 10:51:58] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 10:52:04] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:52:04] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:52:04] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:52:08] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:52:08] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:52:08] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:52:18] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create si
+[04/02/2025 10:52:18] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:52:18] <server.thread.AbstractWorker> [CONFIG]: Sala si creada con exito.
+[04/02/2025 10:52:24] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join si
+[04/02/2025 10:52:24] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:52:24] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:52:29] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 10:52:29] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:52:31] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 10:52:31] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:52:37] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 10:52:37] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:52:43] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 10:52:43] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:52:47] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 10:52:47] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 10:52:55] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[04/02/2025 10:52:55] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:01] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant c
+[04/02/2025 10:53:01] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:01] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:53:09] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant h
+[04/02/2025 10:53:09] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:09] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:53:23] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 10:53:23] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:33] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant s
+[04/02/2025 10:53:33] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:40] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant v
+[04/02/2025 10:53:40] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:53:54] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant r
+[04/02/2025 10:53:54] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:54:07] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[04/02/2025 10:54:07] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:54:07] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 10:54:13] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant m
+[04/02/2025 10:54:13] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:54:30] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant b
+[04/02/2025 10:54:30] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 10:54:48] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /solve mas sabe el diablo por viejo que por diablo.
+[04/02/2025 10:54:48] <server.command.commands.SolveCommand> [INFO]: Ejecutando comando /solve por /127.0.0.1
+[04/02/2025 10:54:56] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 10:54:56] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 10:55:02] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 10:55:02] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 10:59:09] <server.HangedServer> [INFO]: Servidor escuchando en el puerto: 2050
+[04/02/2025 10:59:11] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:59:11] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:59:18] <server.HangedServer> [INFO]: Nueva conexión aceptada desde: /127.0.0.1
+[04/02/2025 10:59:18] <server.thread.AbstractWorker> [INFO]: Esperando comandos del cliente: /127.0.0.1
+[04/02/2025 10:59:24] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Hitler 1
+[04/02/2025 10:59:24] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:59:24] <server.command.commands.LoginCommand> [INFO]: Hitler: sesión iniciada con exito!
+[04/02/2025 10:59:31] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /login Juan 1
+[04/02/2025 10:59:31] <server.command.commands.LoginCommand> [INFO]: Ejecutando comando /login por /127.0.0.1
+[04/02/2025 10:59:31] <server.command.commands.LoginCommand> [INFO]: Juan: sesión iniciada con exito!
+[04/02/2025 10:59:39] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer create jijijija
+[04/02/2025 10:59:39] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:59:39] <server.thread.AbstractWorker> [CONFIG]: Sala jijijija creada con exito.
+[04/02/2025 10:59:45] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join ewf
+[04/02/2025 10:59:45] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:59:45] <server.thread.AbstractWorker> [WARNING]: La sala no existe.
+[04/02/2025 10:59:58] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /multiplayer join jijijija
+[04/02/2025 10:59:58] <server.command.commands.MultiplayerCommand> [INFO]: Ejecutando comando /multiplayer por /127.0.0.1
+[04/02/2025 10:59:58] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:00:05] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel a
+[04/02/2025 11:00:05] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 11:00:10] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel e
+[04/02/2025 11:00:10] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 11:00:14] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel i
+[04/02/2025 11:00:14] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 11:00:17] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel o
+[04/02/2025 11:00:17] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 11:00:21] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /vowel u
+[04/02/2025 11:00:21] <server.command.commands.VowelCommand> [INFO]: Ejecutando comando /vowel por /127.0.0.1
+[04/02/2025 11:00:21] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:00:36] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant q
+[04/02/2025 11:00:36] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:00:36] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:00:44] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant l
+[04/02/2025 11:00:44] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:00:50] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant n
+[04/02/2025 11:00:50] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:00:54] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant t
+[04/02/2025 11:00:54] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:00:59] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant c
+[04/02/2025 11:00:59] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:01:05] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant y
+[04/02/2025 11:01:05] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:01:16] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant d
+[04/02/2025 11:01:16] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:01:22] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant g
+[04/02/2025 11:01:22] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:01:41] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant r
+[04/02/2025 11:01:41] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:03] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant j
+[04/02/2025 11:02:03] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:03] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:02:14] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant p
+[04/02/2025 11:02:14] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:14] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:02:20] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant f
+[04/02/2025 11:02:20] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:20] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:02:39] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant m
+[04/02/2025 11:02:39] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:39] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:02:54] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant v
+[04/02/2025 11:02:54] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:02:54] <server.thread.AbstractWorker> [INFO]: Es tu turno.
+[04/02/2025 11:03:29] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /consonant s
+[04/02/2025 11:03:29] <server.command.commands.ConsonantCommand> [INFO]: Ejecutando comando /consonant por /127.0.0.1
+[04/02/2025 11:03:52] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 11:03:52] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 11:03:56] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /singleplayer
+[04/02/2025 11:03:56] <server.command.commands.SinglePlayerCommand> [INFO]: Ejecutando comando /singleplayer por /127.0.0.1
+[04/02/2025 11:05:57] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /user
+[04/02/2025 11:05:57] <server.command.commands.UserCommand> [INFO]: Ejecutando comando /user por /127.0.0.1
+[04/02/2025 11:06:06] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /rooms
+[04/02/2025 11:06:06] <server.command.commands.RoomsCommand> [INFO]: Ejecutando comando /rooms por /127.0.0.1
+[04/02/2025 11:06:14] <server.service.services.CommandProcessor> [INFO]: Procesando comando: /exit
+[04/02/2025 11:06:14] <server.command.commands.ExitCommand> [INFO]: Ejecutando comando /exit por /127.0.0.1
+[04/02/2025 11:06:14] <server.thread.AbstractWorker> [INFO]: Conexión cerrada para: /127.0.0.1

@@ -16,19 +16,28 @@ public class SolveCommand implements Command {
     public void execute(String[] args, ClientHandler clientHandler) {
         if (args.length < parametersMinimum) {
             clientHandler.getOutput().println("Ayuda: " + CommandFactory.getCommandSymbol() +
-                    COMMAND_NAME + " <frase...>");
+                    COMMAND_NAME + " <proverbio...>");
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
 
-        if (!clientHandler.hasActiveSingleGame()) {
+
+        if (!clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
             clientHandler.getOutput().println("No tienes una partida activa.");
             return;
         }
 
-        String phrase = String.join(" ", args);
-        clientHandler.getGameSession().resolveProverb(phrase);
+        if (clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
+            String proverb = String.join(" ", args);
+            clientHandler.getGameSession().resolveProverb(proverb);
+            return;
+        }
+
+        if (clientHandler.hasActiveMultiplayerGame()) {
+            String proverb = String.join(" ", args);
+            clientHandler.getCurrentRoom().playerResolve(proverb);
+        }
     }
 
     public static String getCommandName() {

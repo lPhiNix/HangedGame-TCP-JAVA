@@ -5,10 +5,9 @@ import server.thread.ClientHandler;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class HangedRoom {
-    private final int maxUsers = 2;
+    private static final int MAX_USERS = 2;
     private final String roomName;
     private final List<ClientHandler> players;
     private MultiplayerHangedGame gameSession;
@@ -18,11 +17,12 @@ public class HangedRoom {
         this.roomName = roomName;
         this.players = new ArrayList<>();
         this.players.add(owner);
+        owner.setCurrentRoom(this);
     }
 
     public synchronized void addPlayer(ClientHandler player) {
-        if (players.size() >= maxUsers) {
-            player.sendMessageBoth(Level.WARNING, "La sala está llena.");
+        if (players.size() >= MAX_USERS) {
+            player.getOutput().println("La sala está llena.");
             return;
         }
         players.add(player);
@@ -30,7 +30,7 @@ public class HangedRoom {
 
         broadcast("Jugador " + player.getCurrentUser().getUsername() + " se ha unido.");
 
-        if (players.size() == maxUsers) {
+        if (players.size() == MAX_USERS) {
             startGame();
         }
     }
@@ -45,41 +45,49 @@ public class HangedRoom {
         }
     }
 
-    public synchronized void playerGuessConsonant(ClientHandler player, char consonant) {
+    public synchronized void playerGuessConsonant(char consonant) {
         if (gameSession != null) {
             gameSession.guessConsonant(consonant);
         }
     }
 
-    public synchronized void playerGuessVowel(ClientHandler player, char vowel) {
+    public synchronized void playerGuessVowel(char vowel) {
         if (gameSession != null) {
             gameSession.guessVowel(vowel);
         }
     }
 
-    public synchronized void playerResolve(ClientHandler player, String phrase) {
+    public synchronized void playerResolve(String proverb) {
         if (gameSession != null) {
-            gameSession.resolveProverb(phrase);
+            gameSession.resolveProverb(proverb);
         }
     }
 
-    public synchronized void removePlayer(ClientHandler player) {
+    public synchronized void removePlayer(ClientHandler player, boolean gameOver) {
         players.remove(player);
         broadcast("Jugador " + player.getCurrentUser().getUsername() + " ha abandonado la partida.");
 
-        if (gameSession != null) {
-            gameSession.handlePlayerDisconnect(player);
-        }
+        player.setCurrentRoom(null);
 
-        if (players.isEmpty()) {
-            gameStarted = false;
+        if (!gameOver) {
+            if (gameSession != null) {
+                gameSession.handlePlayerDisconnect(player);
+            }
+
+            if (players.isEmpty()) {
+                gameStarted = false;
+            }
         }
     }
 
     public synchronized void broadcast(String message) {
         for (ClientHandler player : players) {
-            player.sendMessageBoth(Level.INFO, message);
+            player.getOutput().println(message);
         }
+    }
+
+    public String getPlayersAmount() {
+        return "Players: (" + players.size() + "/" + MAX_USERS + ")";
     }
 
     public boolean isEmpty() {

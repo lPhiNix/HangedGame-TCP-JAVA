@@ -20,15 +20,23 @@ public class VowelCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
 
-        if (!clientHandler.hasActiveSingleGame()) {
+        if (!clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
             clientHandler.getOutput().println("No tienes una partida activa.");
             return;
         }
 
-        char vowel = args[0].charAt(0);
-        clientHandler.getGameSession().guessVowel(vowel);
+        if (clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
+            char vowel = args[0].charAt(0);
+            clientHandler.getGameSession().guessVowel(vowel);
+            return;
+        }
+
+        if (clientHandler.hasActiveMultiplayerGame()) {
+            char vowel = args[0].charAt(0);
+            clientHandler.getCurrentRoom().playerGuessVowel(vowel);
+        }
     }
 
     public static String getCommandName() {

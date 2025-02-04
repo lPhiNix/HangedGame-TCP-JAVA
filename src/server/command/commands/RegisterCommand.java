@@ -24,7 +24,7 @@ public class RegisterCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
 
         String username = args[0];
         String password = args[1];
@@ -34,9 +34,11 @@ public class RegisterCommand implements Command {
         User user = manager.authenticate(username, password);
 
         if (user == null && manager.registerUser(args[0], args[1])) {
-            clientHandler.sendMessageBoth(Level.INFO, "Ususario registrado con exito!");
+            clientHandler.getOutput().println("Ususario registrado con exito!");
+            logger.log(Level.INFO, clientHandler.getFormatedUser() + ": ususario registrado con exito!");
         } else {
-            clientHandler.sendMessageBoth(Level.WARNING, "El usuario introducido ya existe");
+            clientHandler.getOutput().println("El usuario introducido ya existe!");
+            logger.log(Level.INFO, clientHandler.getFormatedUser() + ": el usuario introducido ya existe!");
         }
     }
 

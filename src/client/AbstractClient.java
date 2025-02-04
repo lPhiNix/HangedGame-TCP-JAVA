@@ -55,7 +55,6 @@ public class AbstractClient implements Client {
             String commandLine = "";
 
             while (!commandLine.equals(exitCommandLine)) {
-                System.out.print("> ");
                 commandLine = scanner.nextLine().trim();
                 outputWriter.println(commandLine);
             }

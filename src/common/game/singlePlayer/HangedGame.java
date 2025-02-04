@@ -29,31 +29,35 @@ public class HangedGame {
     public void startGame() throws IOException {
         output.println("Iniciando una nueva partida...");
         proverb = proverbManager.createProverb(new Random().nextInt(proverbManager.getProverbs().size()));
-        output.println("La frase oculta es: " + proverb);
+        output.println("Frase oculta: " + proverb);
         scoreManager.resetTries();
     }
 
     public boolean guessConsonant(char consonant) {
         scoreManager.incrementTries();
         boolean correct = proverb.guessConsonant(consonant);
+
         if (correct) {
             output.println("¡Correcto!");
         } else {
             output.println("Incorrecto.");
         }
-        output.println(proverb);
+
+        output.println("Frase actual: " + proverb);
         return correct;
     }
 
     public boolean guessVowel(char vowel) {
         scoreManager.incrementTries();
         boolean correct = proverb.guessVowel(vowel);
+
         if (correct) {
             output.println("¡Correcto!");
         } else {
             output.println("Incorrecto.");
         }
-        output.println(proverb);
+
+        output.println("Frase actual: " + proverb);
         return correct;
     }
 
@@ -63,9 +67,11 @@ public class HangedGame {
             scoreManager.addScore();
             scoreManager.printFinalScore(true);
         } else {
+            output.println("Lo siento, pero esa no es la frase correcta.");
             scoreManager.printFinalScore(false);
         }
         gameOver = true;
+        output.println("La partida ha terminado.");
     }
 
     public boolean isGameOver() {

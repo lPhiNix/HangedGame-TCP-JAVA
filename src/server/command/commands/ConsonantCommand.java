@@ -20,15 +20,23 @@ public class ConsonantCommand implements Command {
             return;
         }
 
-        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0}", COMMAND_NAME);
+        logger.log(Level.INFO, "Ejecutando comando " + CommandFactory.getCommandSymbol() + "{0} por " + clientHandler.getSocketAddress(), COMMAND_NAME);
 
-        if (!clientHandler.hasActiveSingleGame()) {
+        if (!clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
             clientHandler.getOutput().println("No tienes una partida activa.");
             return;
         }
 
-        char consonant = args[0].charAt(0);
-        clientHandler.getGameSession().guessConsonant(consonant);
+        if (clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
+            char consonant = args[0].charAt(0);
+            clientHandler.getGameSession().guessConsonant(consonant);
+            return;
+        }
+
+        if (clientHandler.hasActiveMultiplayerGame()) {
+            char consonant = args[0].charAt(0);
+            clientHandler.getCurrentRoom().playerGuessConsonant(consonant);
+        }
     }
 
     public static String getCommandName() {

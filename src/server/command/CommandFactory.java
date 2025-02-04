@@ -25,6 +25,7 @@ public class CommandFactory {
         registerCommand(ConsonantCommand.getCommandName(), ConsonantCommand.class);
         registerCommand(VowelCommand.getCommandName(), VowelCommand.class);
         registerCommand(SolveCommand.getCommandName(), SolveCommand.class);
+        registerCommand(RoomsCommand.getCommandName(), RoomsCommand.class);
         registerCommand(ExitCommand.getCommandName(), ExitCommand.class);
     }
 
@@ -40,7 +41,7 @@ public class CommandFactory {
         if (commandName.startsWith(COMMAND_SYMBOL)) {
             commandName = commandName.substring(1);
         } else {
-            logger.log(Level.WARNING, "Commando no encontrado: {0}", commandName);
+            logger.log(Level.WARNING, "Commando no reconocido: {0}", commandName);
             return null;
         }
 
@@ -48,7 +49,7 @@ public class CommandFactory {
         if (commandClass != null) {
             return commandClass.getConstructor().newInstance();
         }
-        logger.log(Level.WARNING, "Commando no encontrado: {0}", commandName);
+        logger.log(Level.WARNING, "Commando no reconocido: {0}", commandName);
         return null;
     }
 

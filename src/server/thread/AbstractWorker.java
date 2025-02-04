@@ -3,6 +3,7 @@ package server.thread;
 import common.logger.CustomLogger;
 
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,6 +55,10 @@ public abstract class AbstractWorker extends Thread implements Worker {
     public void sendMessageBoth(Level level, String message) {
         logger.log(level, message);
         output.println(message);
+    }
+
+    public InetAddress getSocketAddress() {
+        return socket.getInetAddress();
     }
 
     public void setRunning(boolean running) {

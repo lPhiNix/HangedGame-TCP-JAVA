@@ -3,6 +3,7 @@ package common.game.multiPlayer;
 import common.game.score.ScoreManager;
 import common.model.Proverb;
 import common.model.User;
+import server.service.services.RoomManager;
 import server.thread.ClientHandler;
 import server.service.ServiceRegister;
 import server.service.services.ProverbManager;
@@ -16,6 +17,7 @@ import java.util.logging.Level;
 public class MultiplayerHangedGame {
     private final List<ClientHandler> players;
     private final ProverbManager proverbManager;
+    private final RoomManager roomManager;
     private final Proverb proverb;
     private final ScoreManager[] scoreManagers;
     private int currentTurnIndex = 0;
@@ -24,6 +26,7 @@ public class MultiplayerHangedGame {
     public MultiplayerHangedGame(List<ClientHandler> players, ServiceRegister serviceRegister) throws IOException {
         this.players = players;
         this.proverbManager = serviceRegister.getService(ProverbManager.class);
+        this.roomManager = serviceRegister.getService(RoomManager.class);
 
         // Elegir un proverbio aleatorio
         this.proverb = proverbManager.createProverb(new Random().nextInt(proverbManager.getProverbs().size()));
@@ -37,7 +40,8 @@ public class MultiplayerHangedGame {
             this.scoreManagers[i] = new ScoreManager(userManager, user, players.get(i).getOutput());
         }
 
-        broadcast("La partida ha comenzado. Frase oculta: " + proverb);
+        broadcast("Iniciando una nueva partida...");
+        broadcast("Frase oculta: " + proverb);
         announceTurn();
     }
 
@@ -53,7 +57,7 @@ public class MultiplayerHangedGame {
         if (correct) {
             broadcast("¡" + currentPlayer.getCurrentUser().getUsername() + " ha acertado la consonante '" + consonant + "'!");
         } else {
-            broadcast("La consonante '" + consonant + "' no está en la frase.");
+            broadcast(currentPlayer.getCurrentUser().getUsername() + " ha fallado con la consonante '" + consonant + "'.");
             nextTurn();
         }
 
@@ -73,7 +77,7 @@ public class MultiplayerHangedGame {
         if (correct) {
             broadcast("¡" + currentPlayer.getCurrentUser().getUsername() + " ha acertado la vocal '" + vowel + "'!");
         } else {
-            broadcast("La vocal '" + vowel + "' no está en la frase.");
+            broadcast(currentPlayer.getCurrentUser().getUsername() + " ha fallado con la vocal '" + vowel + "'.");
             nextTurn();
         }
 
@@ -87,12 +91,13 @@ public class MultiplayerHangedGame {
         ClientHandler currentPlayer = players.get(currentTurnIndex);
         ScoreManager currentScore = scoreManagers[currentTurnIndex];
 
-        if (proverb.resolveProverb(phrase)) {
-            broadcast("¡" + currentPlayer.getCurrentUser().getUsername() + " ha resuelto la frase correctamente! Frase: " + proverb.getText());
+        if (this.proverb.resolveProverb(phrase)) {
+            broadcast("¡" + currentPlayer.getCurrentUser().getUsername() + " ha resuelto la frase correctamente! Frase: " + this.proverb.getText());
             currentScore.addScore();
             endGame();
         } else {
-            broadcast(currentPlayer.getCurrentUser().getUsername() + " ha fallado en su intento de resolver la frase.");
+            broadcast(currentPlayer.getCurrentUser().getUsername() + " ha fallado al intentar resolver la frase.");
+            broadcast("Lo siento, pero esa no es la frase correcta.");
             nextTurn();
         }
     }
@@ -105,7 +110,7 @@ public class MultiplayerHangedGame {
     private void announceTurn() {
         ClientHandler currentPlayer = players.get(currentTurnIndex);
         broadcast("Turno de " + currentPlayer.getCurrentUser().getUsername() + ".");
-        currentPlayer.sendMessageBoth(Level.INFO, "Es tu turno. Escribe '/guess <letra>' para adivinar una consonante o vocal, o '/resolve <frase>' para resolver.");
+        currentPlayer.sendMessageBoth(Level.INFO, "Es tu turno.");
     }
 
     private void checkGameOver() {
@@ -118,11 +123,29 @@ public class MultiplayerHangedGame {
     private void endGame() {
         gameOver = true;
         broadcast("La partida ha terminado.");
+
+        // Determinar el ganador
+        ClientHandler winner = players.get(currentTurnIndex);
+        ScoreManager winnerScore = scoreManagers[currentTurnIndex];
+
+        winnerScore.printFinalScore(true);
+
+        broadcast("El ganador ha sido: " + winner.getCurrentUser().getUsername());
+
+        for (int i = 0; i < players.size(); i++) {
+            if (i != currentTurnIndex) {
+                scoreManagers[i].printFinalScore(false);
+            }
+        }
+
+        for (ClientHandler player : players) {
+            roomManager.leaveRoom(player, true);
+        }
     }
 
     private void broadcast(String message) {
         for (ClientHandler player : players) {
-            player.sendMessageBoth(Level.INFO, message);
+            player.getOutput().println(message);
         }
     }
 

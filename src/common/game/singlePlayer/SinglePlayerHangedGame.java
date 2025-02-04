@@ -1,6 +1,6 @@
 package common.game.singlePlayer;
 
-import common.game.score.ScoreManager;
+import common.game.ScoreManager;
 import common.model.Proverb;
 import common.model.User;
 import server.service.ServiceRegister;
@@ -11,14 +11,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
-public class HangedGame {
+public class SinglePlayerHangedGame {
     private final ProverbManager proverbManager;
     private final ScoreManager scoreManager;
     private final PrintWriter output;
     private Proverb proverb;
     private boolean gameOver = false;
 
-    public HangedGame(PrintWriter output, User user, ServiceRegister serviceRegister) {
+    public SinglePlayerHangedGame(PrintWriter output, User user, ServiceRegister serviceRegister) {
         this.proverbManager = serviceRegister.getService(ProverbManager.class);
         this.output = output;
 

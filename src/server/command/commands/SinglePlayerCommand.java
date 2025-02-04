@@ -30,6 +30,7 @@ public class SinglePlayerCommand implements Command {
 
         if (clientHandler.hasActiveMultiplayerGame()) {
             clientHandler.getOutput().println("Sal de la sala para jugar una partida individual.");
+            return;
         }
 
         clientHandler.startGame();

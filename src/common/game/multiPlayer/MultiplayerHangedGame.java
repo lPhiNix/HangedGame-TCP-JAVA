@@ -1,6 +1,6 @@
 package common.game.multiPlayer;
 
-import common.game.score.ScoreManager;
+import common.game.ScoreManager;
 import common.model.Proverb;
 import common.model.User;
 import server.service.services.RoomManager;
@@ -28,10 +28,8 @@ public class MultiplayerHangedGame {
         this.proverbManager = serviceRegister.getService(ProverbManager.class);
         this.roomManager = serviceRegister.getService(RoomManager.class);
 
-        // Elegir un proverbio aleatorio
         this.proverb = proverbManager.createProverb(new Random().nextInt(proverbManager.getProverbs().size()));
 
-        // Inicializar los ScoreManagers de cada jugador
         UserManager userManager = serviceRegister.getService(UserManager.class);
         this.scoreManagers = new ScoreManager[players.size()];
 
@@ -45,10 +43,16 @@ public class MultiplayerHangedGame {
         announceTurn();
     }
 
-    public void guessConsonant(char consonant) {
+    public void guessConsonant(char consonant, ClientHandler player) {
         if (gameOver) return;
 
         ClientHandler currentPlayer = players.get(currentTurnIndex);
+
+        if (!player.equals(currentPlayer)) {
+            player.getOutput().println("No es tu turno");
+            return;
+        }
+
         ScoreManager currentScore = scoreManagers[currentTurnIndex];
 
         currentScore.incrementTries();
@@ -65,10 +69,16 @@ public class MultiplayerHangedGame {
         checkGameOver();
     }
 
-    public void guessVowel(char vowel) {
+    public void guessVowel(char vowel, ClientHandler player) {
         if (gameOver) return;
 
         ClientHandler currentPlayer = players.get(currentTurnIndex);
+
+        if (!player.equals(currentPlayer)) {
+            player.getOutput().println("No es tu turno");
+            return;
+        }
+
         ScoreManager currentScore = scoreManagers[currentTurnIndex];
 
         currentScore.incrementTries();
@@ -85,10 +95,16 @@ public class MultiplayerHangedGame {
         checkGameOver();
     }
 
-    public void resolveProverb(String phrase) {
+    public void resolveProverb(String phrase, ClientHandler player) {
         if (gameOver) return;
 
         ClientHandler currentPlayer = players.get(currentTurnIndex);
+
+        if (!player.equals(currentPlayer)) {
+            player.getOutput().println("No es tu turno");
+            return;
+        }
+
         ScoreManager currentScore = scoreManagers[currentTurnIndex];
 
         if (this.proverb.resolveProverb(phrase)) {
@@ -105,6 +121,10 @@ public class MultiplayerHangedGame {
     private void nextTurn() {
         currentTurnIndex = (currentTurnIndex + 1) % players.size();
         announceTurn();
+    }
+
+    private ClientHandler isTurn() {
+        return players.get(currentTurnIndex);
     }
 
     private void announceTurn() {
@@ -151,15 +171,17 @@ public class MultiplayerHangedGame {
 
     public void handlePlayerDisconnect(ClientHandler player) {
         players.remove(player);
-        broadcast("El jugador " + player.getCurrentUser().getUsername() + " se ha desconectado.");
 
         if (players.size() < 2) {
             broadcast("No hay suficientes jugadores para continuar. La partida termina.");
+            roomManager.leaveRoom(players.get(0), true);
             gameOver = true;
+        }
+
+        if (isTurn().equals(player)) {
+            nextTurn();
         } else {
-            if (players.indexOf(player) == currentTurnIndex) {
-                nextTurn();
-            }
+            announceTurn();
         }
     }
 }

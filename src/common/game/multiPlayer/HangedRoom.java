@@ -5,9 +5,10 @@ import server.thread.ClientHandler;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class HangedRoom {
-    private static final int MAX_USERS = 2;
+    private static final int MAX_USERS = 3;
     private final String roomName;
     private final List<ClientHandler> players;
     private MultiplayerHangedGame gameSession;
@@ -25,6 +26,7 @@ public class HangedRoom {
             player.getOutput().println("La sala está llena.");
             return;
         }
+        player.sendMessageBoth(Level.INFO, player.getFormatedUser() + " ha entrado a la sala " + this.getRoomName());
         players.add(player);
         player.setCurrentRoom(this);
 
@@ -45,21 +47,21 @@ public class HangedRoom {
         }
     }
 
-    public synchronized void playerGuessConsonant(char consonant) {
+    public synchronized void playerGuessConsonant(char consonant, ClientHandler player) {
         if (gameSession != null) {
-            gameSession.guessConsonant(consonant);
+            gameSession.guessConsonant(consonant, player);
         }
     }
 
-    public synchronized void playerGuessVowel(char vowel) {
+    public synchronized void playerGuessVowel(char vowel, ClientHandler player) {
         if (gameSession != null) {
-            gameSession.guessVowel(vowel);
+            gameSession.guessVowel(vowel, player);
         }
     }
 
-    public synchronized void playerResolve(String proverb) {
+    public synchronized void playerResolve(String proverb, ClientHandler player) {
         if (gameSession != null) {
-            gameSession.resolveProverb(proverb);
+            gameSession.resolveProverb(proverb, player);
         }
     }
 

@@ -1,4 +1,4 @@
-package common.game.score;
+package common.game;
 
 public enum Score {
     MAX(150, 0),

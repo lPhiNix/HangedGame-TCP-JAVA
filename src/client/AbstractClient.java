@@ -18,7 +18,6 @@ public class AbstractClient implements Client {
 
     public AbstractClient() {
         try {
-            // Conectar al servidor
             socket = new Socket(SERVER_HOST, SERVER_PORT);
             inputReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             outputWriter = new PrintWriter(socket.getOutputStream(), true);

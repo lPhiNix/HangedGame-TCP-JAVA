@@ -1,6 +1,6 @@
-package common.game.score;
+package common.game;
 
-import common.game.score.Score;
+import common.game.Score;
 import common.model.User;
 import server.service.services.UserManager;
 

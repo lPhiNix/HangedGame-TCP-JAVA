@@ -21,7 +21,8 @@ public class CommandProcessor implements Service {
 
         String[] parsedCommand = commandLine.split("\\s+");
         if (parsedCommand.length == 0) {
-            clientHandler.sendMessageBoth(Level.WARNING, "Comando no reconocido insertado por " + clientHandler.getFormatedUser());
+            logger.log(Level.WARNING, "Comando no reconocido insertado por " + clientHandler.getFormatedUser());
+            clientHandler.getOutput().println("Comando no reconocido.");
             return;
         }
 
@@ -36,7 +37,8 @@ public class CommandProcessor implements Service {
         if (userCommand != null) {
             userCommand.execute(commandParameters, clientHandler);
         } else {
-            clientHandler.sendMessageBoth(Level.WARNING, "Comando no reconocido insertado por " + clientHandler.getFormatedUser());
+            logger.log(Level.WARNING, "Comando no reconocido insertado por " + clientHandler.getFormatedUser());
+            clientHandler.getOutput().println("Comando no reconocido.");
         }
     }
 

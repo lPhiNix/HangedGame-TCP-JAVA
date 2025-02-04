@@ -15,8 +15,10 @@ public class MultiplayerCommand implements Command {
     private static final int parametersAmount = 2;
     @Override
     public void execute(String[] args, ClientHandler clientHandler) {
-        if ((args.length != parametersAmount - 1 && args[0].equals("leave")) ||
+        if (args.length < parametersAmount - 1 ||
+                (args.length != parametersAmount - 1 && args[0].equals("leave")) ||
                 (args.length != parametersAmount && !args[0].equals("leave"))) {
+
             clientHandler.getOutput().println("Ayuda: " + CommandFactory.getCommandSymbol() +
                     COMMAND_NAME + " <create|join|leave> [nombreSala]");
             return;

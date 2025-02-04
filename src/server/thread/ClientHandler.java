@@ -3,7 +3,7 @@ package server.thread;
 import common.game.multiPlayer.HangedRoom;
 import server.service.ServiceRegister;
 import server.service.services.CommandProcessor;
-import common.game.singlePlayer.HangedGame;
+import common.game.singlePlayer.SinglePlayerHangedGame;
 import common.model.User;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.logging.Level;
 
 public class ClientHandler extends AbstractWorker {
     private final ServiceRegister serviceRegister;
-    private HangedGame gameSession;
+    private SinglePlayerHangedGame gameSession;
     private HangedRoom currentRoom;
     private User currentUser;
 
@@ -41,7 +41,7 @@ public class ClientHandler extends AbstractWorker {
     }
 
     public void startGame() {
-        gameSession = new HangedGame(output, currentUser, serviceRegister);
+        gameSession = new SinglePlayerHangedGame(output, currentUser, serviceRegister);
         try {
             gameSession.startGame();
         } catch (IOException e) {
@@ -65,11 +65,11 @@ public class ClientHandler extends AbstractWorker {
         }
     }
 
-    public HangedGame getGameSession() {
+    public SinglePlayerHangedGame getGameSession() {
         return gameSession;
     }
 
-    public void setGameSession(HangedGame gameSession) {
+    public void setGameSession(SinglePlayerHangedGame gameSession) {
         this.gameSession = gameSession;
     }
 

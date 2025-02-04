@@ -35,7 +35,7 @@ public class ConsonantCommand implements Command {
 
         if (clientHandler.hasActiveMultiplayerGame()) {
             char consonant = args[0].charAt(0);
-            clientHandler.getCurrentRoom().playerGuessConsonant(consonant);
+            clientHandler.getCurrentRoom().playerGuessConsonant(consonant, clientHandler);
         }
     }
 

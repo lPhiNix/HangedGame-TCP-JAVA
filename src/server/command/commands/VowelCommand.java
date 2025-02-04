@@ -35,7 +35,7 @@ public class VowelCommand implements Command {
 
         if (clientHandler.hasActiveMultiplayerGame()) {
             char vowel = args[0].charAt(0);
-            clientHandler.getCurrentRoom().playerGuessVowel(vowel);
+            clientHandler.getCurrentRoom().playerGuessVowel(vowel, clientHandler);
         }
     }
 

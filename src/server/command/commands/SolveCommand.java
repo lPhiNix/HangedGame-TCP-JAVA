@@ -36,7 +36,7 @@ public class SolveCommand implements Command {
 
         if (clientHandler.hasActiveMultiplayerGame()) {
             String proverb = String.join(" ", args);
-            clientHandler.getCurrentRoom().playerResolve(proverb);
+            clientHandler.getCurrentRoom().playerResolve(proverb, clientHandler);
         }
     }
 

@@ -6,7 +6,6 @@ import server.service.services.CommandProcessor;
 import common.game.singlePlayer.SinglePlayerHangedGame;
 import common.model.User;
 
-import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
 

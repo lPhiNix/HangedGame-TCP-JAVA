@@ -39,7 +39,7 @@ public class HelpCommand implements Command {
 
         // Lista de comandos disponibles con su descripción
         clientHandler.getOutput().println(formatCommand("register <nombre> <constraseña>", "Permite a un cliente registrarse en el servidor."));
-        clientHandler.getOutput().println(formatCommand("login <nombre> <contraseña>", "Permite iniciar sesión con un usuario anteriormente registrado"));
+        clientHandler.getOutput().println(formatCommand("login <nombre> <contraseña>", "Permite iniciar sesión con un usuario anteriormente registrado."));
         clientHandler.getOutput().println(formatCommand("user", "Muestra la información del usuario actual."));
         clientHandler.getOutput().println(formatCommand("rooms", "Lista las salas activas en el servidor."));
         clientHandler.getOutput().println(formatCommand("singleplayer", "Inicia una partida en solitario."));

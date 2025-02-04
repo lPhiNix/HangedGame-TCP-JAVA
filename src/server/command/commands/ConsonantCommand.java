@@ -29,7 +29,7 @@ public class ConsonantCommand implements Command {
 
         if (clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
             char consonant = args[0].charAt(0);
-            clientHandler.getGameSession().guessLetter(consonant, false);
+            clientHandler.getGameSession().guessConsonant(consonant);
             return;
         }
 

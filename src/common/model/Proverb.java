@@ -3,10 +3,22 @@ package common.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa un refrán en el juego.
+ * <p>
+ * Gestiona la ocultación y revelación de palabras, además de permitir intentos de resolución.
+ * </p>
+ */
 public class Proverb {
-    private final List<Object> elements;
-    private final String text;
+    private final List<Object> elements; // Lista de elementos del refrán, que pueden ser palabras o separadores.
+    private final String text; // Texto completo del refrán.
 
+    /**
+     * Crea un refrán a partir de una cadena de texto.
+     *
+     * @param text Texto del refrán.
+     * @throws IllegalArgumentException Si el texto es nulo o vacío.
+     */
     public Proverb(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty");
@@ -39,6 +51,17 @@ public class Proverb {
         return result;
     }
 
+    /** @return Texto original del refrán. */
+    public String getText() {
+        return text;
+    }
+
+    /**
+     * Intenta adivinar una consonante en el refrán.
+     *
+     * @param c Consonante a adivinar.
+     * @return {@code true} si la consonante está en alguna palabra, {@code false} en caso contrario.
+     */
     public boolean guessConsonant(char c) {
         boolean guessedCorrectly = false;
         for (Object element : elements) {
@@ -51,6 +74,12 @@ public class Proverb {
         return guessedCorrectly;
     }
 
+    /**
+     * Intenta adivinar una vocal en el refrán.
+     *
+     * @param c Vocal a adivinar.
+     * @return {@code true} si la vocal está en alguna palabra, {@code false} en caso contrario.
+     */
     public boolean guessVowel(char c) {
         boolean guessedCorrectly = false;
         for (Object element : elements) {
@@ -63,10 +92,21 @@ public class Proverb {
         return guessedCorrectly;
     }
 
+    /**
+     * Intenta resolver el refrán completo.
+     *
+     * @param guess Refrán ingresado por el jugador.
+     * @return {@code true} si el refrán es correcto, {@code false} en caso contrario.
+     */
     public boolean resolveProverb(String guess) {
         return text.equalsIgnoreCase(guess);
     }
 
+    /**
+     * Verifica si el refrán ha sido completamente descubierto.
+     *
+     * @return {@code true} si todas las palabras han sido reveladas, {@code false} en caso contrario.
+     */
     public boolean isRevealed() {
         for (Object element : elements) {
             if (element instanceof Word word) {
@@ -78,14 +118,9 @@ public class Proverb {
         return true;
     }
 
-    public String getText() {
-        return text;
-    }
-
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-
         for (Object element : elements) {
             if (element instanceof Word word) {
                 result.append(new String(word.getHiddenWord()));
@@ -93,7 +128,7 @@ public class Proverb {
                 result.append(element);
             }
         }
-
         return result.toString();
     }
 }
+

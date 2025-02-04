@@ -2,7 +2,7 @@
 
 ## ✨ Descripción General
 
-**Ruleta de Refranes** es una aplicación cliente/servidor basada en TCP que permite jugar a un juego de adivinanza de refranes. Existen dos modalidades de juego: **individual** y **multijugador**, donde los jugadores deben adivinar consonantes, comprar vocales y resolver el refrán oculto.
+**HangedGame** es una aplicación cliente/servidor basada en TCP que permite jugar a un juego de adivinanza de refranes. Existen dos modalidades de juego: **individual** y **multijugador**, donde los jugadores deben adivinar consonantes, comprar vocales y resolver el refrán oculto.
 
 ### Características principales:
 

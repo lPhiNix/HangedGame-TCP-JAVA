@@ -15,9 +15,6 @@ import java.util.Scanner;
  * </p>
  */
 public class Client {
-    // Constantes para la conexión al servidor
-    private static final String SERVER_HOST = "localhost";
-    private static final int SERVER_PORT = 2050;
 
     // Atributos para manejar la conexión y comunicación con el servidor
     private Socket socket;
@@ -35,9 +32,9 @@ public class Client {
     /**
      * Constructor que establece la conexión con el servidor y prepara los flujos de entrada y salida.
      */
-    public Client() {
+    public Client(String serverHost, int serverPort) {
         try {
-            socket = new Socket(SERVER_HOST, SERVER_PORT); // Conexión al servidor
+            socket = new Socket(serverHost, serverPort); // Conexión al servidor
             inputReader = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Lee mensajes del servidor
             outputWriter = new PrintWriter(socket.getOutputStream(), true); // Envía comandos al servidor
         } catch (IOException e) {

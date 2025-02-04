@@ -2,7 +2,6 @@
 out/
 .idea
 HangedGame-TCP-JAVA.iml
-test/
 
 ### Eclipse ###
 .apt_generated

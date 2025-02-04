@@ -166,10 +166,8 @@ src/
 │       ├── ClientHandler.java        # Clase que gestiona la comunicación con cada cliente conectado.
 │       └── Worker.java               # Clase que maneja el procesamiento en segundo plano de tareas del servidor.
 └── test/
-    ├── MainClient.java               # Clase de prueba para simular el funcionamiento de un cliente.
-    ├── MainClient2.java              # Otra clase de prueba para un cliente adicional.
-    ├── MainClient3.java              # Tercera clase de prueba para otro cliente.
-    └── MainServer.java               # Clase de prueba para simular el funcionamiento del servidor.
+    ├── MainClient.java               # Clase de prueba para el funcionamiento de un cliente.
+    └── MainServer.java               # Clase de prueba para el funcionamiento del servidor.
     
 proverbs.txt                           # Archivo que contiene una lista de proverbios, que se usan en el juego para que los jugadores adivinen.
 users.txt                              # Archivo donde se almacenan los datos de los usuarios registrados, usado para la autenticación y registro.

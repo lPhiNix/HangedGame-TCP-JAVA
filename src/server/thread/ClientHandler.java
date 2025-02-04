@@ -44,7 +44,7 @@ public class ClientHandler extends AbstractWorker {
         gameSession = new SinglePlayerHangedGame(output, currentUser, serviceRegister);
         try {
             gameSession.startGame();
-        } catch (IOException e) {
+        } catch (Exception e) {
             sendMessageBoth(Level.SEVERE, "Error al iniciar partida individual por " + getFormatedUser());
         }
     }

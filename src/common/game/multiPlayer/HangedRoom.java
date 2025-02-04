@@ -11,7 +11,7 @@ public class HangedRoom {
     private static final int MAX_USERS = 3;
     private final String roomName;
     private final List<ClientHandler> players;
-    private MultiplayerHangedGame gameSession;
+    private MultiPlayerHangedGame gameSession;
     private boolean gameStarted = false;
 
     public HangedRoom(String roomName, ClientHandler owner) {
@@ -41,21 +41,21 @@ public class HangedRoom {
         gameStarted = true;
         broadcast("La partida ha comenzado.");
         try {
-            gameSession = new MultiplayerHangedGame(players, players.get(0).getServiceRegister());
-        } catch (IOException e) {
+            gameSession = new MultiPlayerHangedGame(players, players.get(0).getServiceRegister());
+        } catch (Exception e) {
             broadcast("Error al iniciar la partida.");
         }
     }
 
     public synchronized void playerGuessConsonant(char consonant, ClientHandler player) {
         if (gameSession != null) {
-            gameSession.guessConsonant(consonant, player);
+            gameSession.guessLetter(consonant, false, player);
         }
     }
 
     public synchronized void playerGuessVowel(char vowel, ClientHandler player) {
         if (gameSession != null) {
-            gameSession.guessVowel(vowel, player);
+            gameSession.guessLetter(vowel, true, player);
         }
     }
 

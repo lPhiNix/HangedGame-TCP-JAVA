@@ -29,7 +29,7 @@ public class VowelCommand implements Command {
 
         if (clientHandler.hasActiveSingleGame() && !clientHandler.hasActiveMultiplayerGame()) {
             char vowel = args[0].charAt(0);
-            clientHandler.getGameSession().guessVowel(vowel);
+            clientHandler.getGameSession().guessLetter(vowel, true);
             return;
         }
 

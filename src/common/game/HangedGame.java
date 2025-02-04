@@ -7,12 +7,11 @@ import server.service.services.ProverbManager;
 import java.util.Random;
 
 public abstract class HangedGame implements Game {
-    private final ProverbManager proverbManager;
     protected final Proverb proverb;
     protected boolean gameOver = false;
 
     protected HangedGame(ServiceRegister serviceRegister) {
-        this.proverbManager = serviceRegister.getService(ProverbManager.class);
+        ProverbManager proverbManager = serviceRegister.getService(ProverbManager.class);
         this.proverb = proverbManager.createProverb(new Random().nextInt(proverbManager.getProverbs().size()));
     }
 }

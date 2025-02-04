@@ -39,11 +39,12 @@ public class HangedRoom {
 
     private void startGame() {
         gameStarted = true;
+        gameSession = new MultiplayerHangedGame(players, players.get(0).getServiceRegister());
         broadcast("La partida ha comenzado.");
         try {
-            gameSession = new MultiplayerHangedGame(players, players.get(0).getServiceRegister());
-        } catch (IOException e) {
-            broadcast("Error al iniciar la partida.");
+            gameSession.startGame();
+        } catch (Exception e) {
+            broadcast("Error al iniciar la partida en la sala " + roomName);
         }
     }
 

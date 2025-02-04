@@ -17,21 +17,23 @@ public class MultiplayerHangedGame extends HangedGame {
     private final RoomManager roomManager;
     private final ScoreManager[] scoreManagers;
     private int currentTurnIndex = 0;
-    private boolean gameOver = false;
 
-    public MultiplayerHangedGame(List<ClientHandler> players, ServiceRegister serviceRegister) throws IOException {
+    public MultiplayerHangedGame(List<ClientHandler> players, ServiceRegister serviceRegister) {
         super(serviceRegister);
         this.players = players;
         this.roomManager = serviceRegister.getService(RoomManager.class);
+        this.scoreManagers = new ScoreManager[players.size()];
 
         UserManager userManager = serviceRegister.getService(UserManager.class);
-        this.scoreManagers = new ScoreManager[players.size()];
 
         for (int i = 0; i < players.size(); i++) {
             User user = players.get(i).getCurrentUser();
             this.scoreManagers[i] = new ScoreManager(userManager, user, players.get(i).getOutput());
         }
+    }
 
+    @Override
+    public void startGame() {
         broadcast("Iniciando una nueva partida...");
         broadcast("Frase oculta: " + proverb);
         announceTurn();

@@ -1,6 +1,6 @@
 package common.game.multiPlayer;
 
-import common.game.ScoreManager;
+import common.game.score.ScoreManager;
 import common.model.Proverb;
 import common.model.User;
 import server.service.services.RoomManager;
